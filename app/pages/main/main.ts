@@ -1,0 +1,62 @@
+import {Component, OnInit} from '@angular/core';
+import {NavController, MenuController, ViewController} from 'ionic-angular';
+import {Observable} from "rxjs/Rx";
+
+/*
+ Generated class for the MainPage page.
+
+ See http://ionicframework.com/docs/v2/components/#navigation for more info on
+ Ionic pages and navigation.
+ */
+@Component({
+    templateUrl: 'build/pages/main/main.html',
+})
+export class MainPage implements OnInit {
+    constructor(private nav:NavController, private menuController:MenuController, public viewController:ViewController) {
+    }
+
+    //在组件初始化
+    ngOnInit() {
+
+        //菜单控制
+        this.viewController.willEnter.subscribe(()=> {
+
+            this.menuController.close();
+            this.menuController.swipeEnable(true);
+
+        });
+        //菜单控制
+        this.viewController.willLeave.subscribe(()=> {
+            this.menuController.close();
+            this.menuController.swipeEnable(false);
+        });
+
+        this.sm().subscribe((n)=> {
+            console.log(n);
+        }, (error)=> {
+            console.log(error);
+        }, ()=> {
+            console.log("complete");
+        });
+
+    }
+
+
+    sm():Observable<number> {
+        return Observable.create(observer=> {
+            try {
+                observer.next(1 / 0);
+                observer.next(2);
+                observer.next(3);
+                setTimeout(()=> {
+                    observer.next(4);
+                    observer.complete();
+                }, 1000);
+            } catch (error) {
+                observer.error(error);
+            }
+        });
+    }
+
+
+}

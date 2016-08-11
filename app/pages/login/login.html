@@ -1,0 +1,47 @@
+<ion-content class="login">
+
+
+    <ion-grid responsive-lg
+              style="margin-top:-moz-calc((100vh - 300px) / 2);margin-top:-webkit-calc((100vh - 256px) / 2);margin-top:calc((100vh - 256px) / 2);">
+        <ion-row center>
+            <ion-col center offset-25 width-50>
+
+                <ion-card>
+                    <ion-card-header>
+                        <h2>{{'APP_TITLE'|i18nSelect:i18NService.getI18nMapping()}}</h2>
+                    </ion-card-header>
+
+                    <ion-list>
+
+                        <ion-item large>
+                            <ion-label>{{'USERNAME'|i18nSelect:i18NService.getI18nMapping()}}：</ion-label>
+                            <ion-input type="text" clearInput
+                                       placeholder="{{('PLEASE_INPUT'|i18nSelect:i18NService.getI18nMapping())+('USERNAME'|i18nSelect:i18NService.getI18nMapping())}}"></ion-input>
+                        </ion-item>
+
+                        <ion-item large>
+                            <ion-label>{{'PASSWORD'|i18nSelect:i18NService.getI18nMapping()}}：</ion-label>
+                            <ion-input type="password" clearInput
+                                       placeholder="{{('PLEASE_INPUT'|i18nSelect:i18NService.getI18nMapping())+('PASSWORD'|i18nSelect:i18NService.getI18nMapping())}}"></ion-input>
+                        </ion-item>
+
+                    </ion-list>
+
+                </ion-card>
+
+            </ion-col>
+        </ion-row>
+
+        <ion-row center>
+            <ion-col center offset-25 width-50>
+
+                <div style="padding: 0 10px;">
+                    <button block (click)="login()" large>{{'SIGN_IN'|i18nSelect:i18NService.getI18nMapping()}}</button>
+                </div>
+
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+</ion-content>

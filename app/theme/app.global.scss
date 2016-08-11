@@ -1,0 +1,7 @@
+body {
+  @each $color-name, $color-value in $colors {
+    .#{$color-name}-bg, [#{$color-name}-bg] {
+      background-color: #{$color-value};
+    }
+  }
+}

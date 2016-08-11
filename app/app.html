@@ -1,0 +1,74 @@
+<ion-menu [content]="content">
+
+    <ion-content>
+
+        <ion-list>
+            <button menuClose ion-item (click)="openMenuItem(personInfoPage)">
+                <ion-thumbnail item-left>
+                    <img src="images/user.png">
+                </ion-thumbnail>
+                <h2>赵俊明</h2>
+                <p>成都分行营业部</p>
+                <h2>
+                    <ion-icon primary name="star"></ion-icon>
+                    <ion-icon primary name="star"></ion-icon>
+                    <ion-icon primary name="star"></ion-icon>
+                    <ion-icon primary name="star-half"></ion-icon>
+                    <ion-icon primary name="star-outline"></ion-icon>
+                </h2>
+            </button>
+        </ion-list>
+
+        <div padding-top></div>
+
+        <ion-list>
+
+            <ion-list-header>{{'PERSON_SETTING'|i18nSelect:i18NService.getI18nMapping()}}</ion-list-header>
+
+            <button menuClose ion-item (click)="openMenuItem(changePasswordPage)">
+                <ion-icon primary name='lock' item-left></ion-icon>
+                {{'CHANGE_PASSWORD'|i18nSelect:i18NService.getI18nMapping()}}
+            </button>
+
+            <button menuClose ion-item (click)="openMenuItem(notificationsPage)">
+                <ion-icon primary name='notifications' item-left></ion-icon>
+                {{'NOTIFICATION'|i18nSelect:i18NService.getI18nMapping()}}
+                <ion-badge danger item-right>
+                    22
+                </ion-badge>
+            </button>
+
+        </ion-list>
+
+        <div padding-top></div>
+
+        <ion-list>
+            <button menuClose ion-item (click)="openMenuItem(systemSettingPage)">
+                <ion-icon primary name='settings' item-left></ion-icon>
+                {{'SYSTEM_SETTING'|i18nSelect:i18NService.getI18nMapping()}}
+            </button>
+        </ion-list>
+
+        <div padding-top></div>
+
+        <ion-list>
+            <button menuClose ion-item (click)="openMenuItem(systemSettingPage)">
+                <ion-icon primary name='hammer' item-left></ion-icon>
+                {{'BUSINESS_SETTING'|i18nSelect:i18NService.getI18nMapping()}}
+            </button>
+        </ion-list>
+
+    </ion-content>
+
+    <ion-footer>
+        <ion-toolbar>
+            <button menuClose danger block (click)="signOut();">
+                {{'SIGN_OUT'|i18nSelect:i18NService.getI18nMapping()}}
+            </button>
+        </ion-toolbar>
+    </ion-footer>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
