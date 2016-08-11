@@ -12,7 +12,8 @@ import {NotificationsPage} from "./pages/notifications/notifications";
 import {PersonInfoPage} from "./pages/person-info/person-info";
 import {ChangePasswordPage} from "./pages/change-password/change-password";
 import {SystemSettingPage} from "./pages/system-setting/system-setting";
-import {UserService} from "./providers/user-service/user-service"
+import {UserService} from "./providers/user-service/user-service";
+
 
 @Component({
     templateUrl: 'build/app.html'

@@ -23,6 +23,12 @@ export class LoginPage {
     }
 
     login() {
-        this.userService.signIn({username: this.username, password: this.password});
+        this.userService.signIn({username: this.username, password: this.password})
+            .then((userInfo)=> {
+                console.log(userInfo);
+            })
+            .catch(error=> {
+                console.log(error);
+            });
     }
 }

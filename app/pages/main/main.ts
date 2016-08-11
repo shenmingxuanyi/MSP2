@@ -12,7 +12,7 @@ import {Observable} from "rxjs/Rx";
     templateUrl: 'build/pages/main/main.html',
 })
 export class MainPage implements OnInit {
-    constructor(private nav:NavController, private menuController:MenuController, public viewController:ViewController) {
+    constructor(private nav: NavController, private menuController: MenuController, public viewController: ViewController) {
     }
 
     //在组件初始化
@@ -31,18 +31,18 @@ export class MainPage implements OnInit {
             this.menuController.swipeEnable(false);
         });
 
-        this.sm().subscribe((n)=> {
-            console.log(n);
-        }, (error)=> {
-            console.log(error);
-        }, ()=> {
-            console.log("complete");
-        });
+        // this.getObservable().subscribe((n)=> {
+        //     console.log(n);
+        // }, (error)=> {
+        //     console.log(error);
+        // }, ()=> {
+        //     console.log("complete");
+        // });
 
     }
 
 
-    sm():Observable<number> {
+    getObservable(): Observable<number> {
         return Observable.create(observer=> {
             try {
                 observer.next(1 / 0);
