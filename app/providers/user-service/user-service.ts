@@ -1,7 +1,9 @@
+///<reference path="../../config/event.config.ts"/>
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Storage, LocalStorage} from "ionic-angular";
+import {Storage, LocalStorage, Events} from "ionic-angular";
+import {EVENTS} from "../../config/event.config"
 
 /*
  Generated class for the UserService provider.
@@ -20,9 +22,17 @@ export class UserService {
     private storage = new Storage(LocalStorage);
 
 
-    constructor(private http: Http) {
+    constructor(private http: Http, private events: Events) {
 
     }
 
+    signIn(user) {
+        
+        this.events.publish(EVENTS.USER_EVENTS.USER_SECURITY.SIGN_IN, user);
+    }
+
+    signOut() {
+        this.events.publish(EVENTS.USER_EVENTS.USER_SECURITY.SIGN_OUT, {});
+    }
 }
 
