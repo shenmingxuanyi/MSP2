@@ -7,8 +7,7 @@ import {Storage, LocalStorage, Events} from "ionic-angular";
 import {EVENTS} from "../../config/event.config"
 import {RESTFUL_SERVICE_RESOURCES} from "../../config/resources.config"
 import {STORAGE_KEY} from "../../config/storageKey.config";
-import {Observable} from "rxjs";
-import {User} from "../../model/user";
+
 
 /*
  Generated class for the UserService provider.
@@ -48,7 +47,7 @@ export class UserService {
 
     };
 
-    signIn(user): Promise<User> {
+    signIn(user): Promise<any> {
 
         return this.http.get(RESTFUL_SERVICE_RESOURCES.SECURITY.SIGN_IN)
             .map((response)=> {
@@ -57,7 +56,7 @@ export class UserService {
             .toPromise()
             .then((response)=> {
                 if (response && response.code == '00') {
-                    
+
                     if (response.context.sysUserInfo.oid) {
 
                         this.userInfo = response.context.sysUserInfo;
