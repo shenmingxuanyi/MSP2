@@ -4,6 +4,7 @@ import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Storage, LocalStorage, Events} from "ionic-angular";
 import {EVENTS} from "../../config/event.config"
+import {RESTFUL_SERVICE_RESOURCES} from "../../config/resources.config";
 
 /*
  Generated class for the UserService provider.
@@ -13,6 +14,7 @@ import {EVENTS} from "../../config/event.config"
  */
 @Injectable()
 export class UserService {
+    private isLogin: boolean;
 
     private userInfo: any;
 
@@ -24,15 +26,32 @@ export class UserService {
 
     constructor(private http: Http, private events: Events) {
 
+        this.isLogin = false;
+
+        this.events.subscribe(EVENTS.USER_EVENTS.USER_SECURITY.SIGN_IN, (userInfo)=> {
+            this.isLogin = true;
+        });
+        
+        this.events.subscribe(EVENTS.USER_EVENTS.USER_SECURITY.SIGN_OUT, ()=> {
+            this.isLogin = false;
+        });
+
     }
 
     signIn(user) {
-        
-        this.events.publish(EVENTS.USER_EVENTS.USER_SECURITY.SIGN_IN, user);
+
+        this.http.get(RESTFUL_SERVICE_RESOURCES.SECURITY.SIGN_IN).subscribe((response)=> {
+            this.userInfo = response.json();
+            this.events.publish(EVENTS.USER_EVENTS.USER_SECURITY.SIGN_IN, this.userInfo);
+        }, (error)=> {
+
+        }, ()=> {
+
+        });
     }
 
     signOut() {
-        this.events.publish(EVENTS.USER_EVENTS.USER_SECURITY.SIGN_OUT, {});
+        this.events.publish(EVENTS.USER_EVENTS.USER_SECURITY.SIGN_OUT, this.userInfo);
     }
 }
 

@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, Events} from 'ionic-angular';
 import {EVENTS} from "../../config/event.config";
 import {I18NService} from "../../providers/i18n-service/i18n-service";
+import {UserService} from "../../providers/user-service/user-service"
 
 /*
  Generated class for the LoginPage page.
@@ -13,10 +14,15 @@ import {I18NService} from "../../providers/i18n-service/i18n-service";
     templateUrl: 'build/pages/login/login.html',
 })
 export class LoginPage {
-    constructor(private nav: NavController, private events: Events, public i18NService: I18NService) {
+
+    username: string;
+    password: string;
+
+    constructor(private nav: NavController, private events: Events, public i18NService: I18NService, private userService: UserService) {
+
     }
 
     login() {
-        this.events.publish(EVENTS.USER_EVENTS.USER_SECURITY.SIGN_IN, {});
+        this.userService.signIn({username: this.username, password: this.password});
     }
 }

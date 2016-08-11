@@ -12,6 +12,7 @@ import {NotificationsPage} from "./pages/notifications/notifications";
 import {PersonInfoPage} from "./pages/person-info/person-info";
 import {ChangePasswordPage} from "./pages/change-password/change-password";
 import {SystemSettingPage} from "./pages/system-setting/system-setting";
+import {UserService} from "./providers/user-service/user-service"
 
 @Component({
     templateUrl: 'build/app.html'
@@ -46,18 +47,20 @@ class MSPAPP implements OnInit {
         //订阅事件
         this.eventsSubscribe();
 
-        this.platform.ready().then(() => {
+        this.platform
+            .ready()
+            .then(() => {
 
-            //设置状态条颜色
-            StatusBar.styleDefault();
+                //设置状态条颜色
+                StatusBar.styleDefault();
 
-            //自动隐藏欢迎屏
-            setTimeout(()=> {
-                //验证登录,调至登录界面
-                Splashscreen.hide();
+                //自动隐藏欢迎屏
+                setTimeout(()=> {
+                    //验证登录,调至登录界面
+                    Splashscreen.hide();
 
-            }, 1000);
-        });
+                }, 1000);
+            });
     }
 
 
@@ -89,4 +92,4 @@ class MSPAPP implements OnInit {
 
 }
 
-ionicBootstrap(MSPAPP, [I18NService], PLATFORM_UI_CONFIG);
+ionicBootstrap(MSPAPP, [I18NService, UserService], PLATFORM_UI_CONFIG);

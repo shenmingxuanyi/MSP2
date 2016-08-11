@@ -16,12 +16,14 @@
                         <ion-item large>
                             <ion-label>{{'USERNAME'|i18nSelect:i18NService.getI18nMapping()}}：</ion-label>
                             <ion-input type="text" clearInput
+                                       [(ngModel)]="username"
                                        placeholder="{{('PLEASE_INPUT'|i18nSelect:i18NService.getI18nMapping())+('USERNAME'|i18nSelect:i18NService.getI18nMapping())}}"></ion-input>
                         </ion-item>
 
                         <ion-item large>
                             <ion-label>{{'PASSWORD'|i18nSelect:i18NService.getI18nMapping()}}：</ion-label>
                             <ion-input type="password" clearInput
+                                       [(ngModel)]="password"
                                        placeholder="{{('PLEASE_INPUT'|i18nSelect:i18NService.getI18nMapping())+('PASSWORD'|i18nSelect:i18NService.getI18nMapping())}}"></ion-input>
                         </ion-item>
 
