@@ -3,14 +3,14 @@ import {ionicBootstrap, Platform, Nav, Events} from 'ionic-angular';
 import {StatusBar, Splashscreen} from 'ionic-native';
 
 import {MainPage} from "./pages/main/main";
-import {LoginPage} from "./pages/login/login";
+import {LoginPage} from "./pages/user-security/login/login";
 import {EVENTS} from "./config/event.config";
 import {PLATFORM_UI_CONFIG} from "./config/platform.config";
 import {I18NService} from "./providers/i18n-service/i18n-service";
-import {ResetPasswordPage} from "./pages/reset-password/reset-password";
+import {ResetPasswordPage} from "./pages/user-security/reset-password/reset-password";
 import {NotificationsPage} from "./pages/notifications/notifications";
-import {PersonInfoPage} from "./pages/person-info/person-info";
-import {ChangePasswordPage} from "./pages/change-password/change-password";
+import {PersonInfoPage} from "./pages/user-security/person-info/person-info";
+import {ChangePasswordPage} from "./pages/user-security/change-password/change-password";
 import {SystemSettingPage} from "./pages/system-setting/system-setting";
 import {UserService} from "./providers/user-service/user-service";
 

@@ -6,10 +6,12 @@
 // App Shared Sass variables belong in app.variables.scss.
 @import "app.global";
 @import "../app";
-@import "../pages/login/login";
 @import "../pages/main/main";
+@import "../pages/user-security/login/login";
+@import "../pages/user-security/person-info/person-info";
+@import "../pages/user-security/reset-password/reset-password";
+@import "../pages/user-security/change-password/change-password";
+@import "../pages/bank-card/choice-bank-card/choice-bank-card";
+@import "../pages/bank-card/create-bank-card/create-bank-card";
 @import "../pages/notifications/notifications";
-@import "../pages/person-info/person-info";
-@import "../pages/reset-password/reset-password";
-@import "../pages/change-password/change-password";
 @import "../pages/system-setting/system-setting";

@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController, Events} from 'ionic-angular';
-import {EVENTS} from "../../config/event.config";
-import {I18NService} from "../../providers/i18n-service/i18n-service";
-import {UserService} from "../../providers/user-service/user-service"
+import {EVENTS} from "../../../config/event.config";
+import {I18NService} from "../../../providers/i18n-service/i18n-service";
+import {UserService} from "../../../providers/user-service/user-service"
 
 /*
  Generated class for the LoginPage page.
@@ -11,7 +11,7 @@ import {UserService} from "../../providers/user-service/user-service"
  Ionic pages and navigation.
  */
 @Component({
-    templateUrl: 'build/pages/login/login.html',
+    templateUrl: 'build/pages/user-security/login/login.html',
 })
 export class LoginPage {
 

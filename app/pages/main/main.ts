@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NavController, MenuController, ViewController} from 'ionic-angular';
 import {Observable} from "rxjs/Rx";
+import {ChoiceBankCardPage} from "../bank-card/choice-bank-card/choice-bank-card";
 
 /*
  Generated class for the MainPage page.
@@ -56,6 +57,10 @@ export class MainPage implements OnInit {
                 observer.error(error);
             }
         });
+    }
+
+    createBankCard() {
+        this.nav.push(ChoiceBankCardPage);
     }
 
 

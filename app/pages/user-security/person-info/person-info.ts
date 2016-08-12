@@ -8,7 +8,7 @@ import { NavController } from 'ionic-angular';
   Ionic pages and navigation.
 */
 @Component({
-  templateUrl: 'build/pages/person-info/person-info.html',
+  templateUrl: 'build/pages/user-security/person-info/person-info.html',
 })
 export class PersonInfoPage {
   constructor(private nav: NavController) {}
