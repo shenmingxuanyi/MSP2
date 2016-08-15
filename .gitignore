@@ -9,5 +9,3 @@ plugins/
 .DS_Store
 Thumbs.db
 .idea/workspace.xml
-app/pages/bank-card/
-app/pipes/
