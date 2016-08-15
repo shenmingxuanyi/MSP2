@@ -25,7 +25,12 @@ export const I18N_MAPPINGS_CONSTANT = {
         ORIGINAL_PASSWORD: "原始密码",
         REPEAT_PASSWORD: "重复密码",
         NEW_PASSWORD: "新的密码",
-        SUBMIT: "提交"
+        SUBMIT: "提交",
+        MAIN_PAGE: "主页",
+        CHOICE_BANK_CARD: "选择银行卡",
+        CREATE_BANK_CARD: "办理银行卡",
+        ALL: "全部",
+        COLLECTION: "收藏"
     },
     ZH_TW: {
         APP_TITLE: "移动营销平台",

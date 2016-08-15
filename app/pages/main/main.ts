@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NavController, MenuController, ViewController} from 'ionic-angular';
 import {Observable} from "rxjs/Rx";
 import {ChoiceBankCardPage} from "../bank-card/choice-bank-card/choice-bank-card";
+import {I18NService} from "../../providers/i18n-service/i18n-service";
 
 /*
  Generated class for the MainPage page.
@@ -13,7 +14,7 @@ import {ChoiceBankCardPage} from "../bank-card/choice-bank-card/choice-bank-card
     templateUrl: 'build/pages/main/main.html',
 })
 export class MainPage implements OnInit {
-    constructor(private nav: NavController, private menuController: MenuController, public viewController: ViewController) {
+    constructor(private nav: NavController, private menuController: MenuController, public viewController: ViewController, public i18NService: I18NService) {
     }
 
     //在组件初始化

@@ -8,7 +8,7 @@ export const RESTFUL_RESOURCE_END_POINT = {
 
 export const RESTFUL_SERVICE_RESOURCES = {
     SECURITY: {
-        SIGN_IN: RESTFUL_RESOURCE_END_POINT.SERVICE + "/security/signIn.json",
-        SIGN_OUT: RESTFUL_RESOURCE_END_POINT.SERVICE + "/security/signOut.json"
+        SIGN_IN: RESTFUL_RESOURCE_END_POINT.SERVICE + "/json/security/signIn.json",
+        SIGN_OUT: RESTFUL_RESOURCE_END_POINT.SERVICE + "/json/security/signOut.json"
     }
 }
