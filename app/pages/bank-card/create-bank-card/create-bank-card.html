@@ -38,7 +38,27 @@
 
 <ion-content>
 
+    <div [ngSwitch]="step">
+        <div padding *ngSwitchCase="0">
 
+        </div>
+        <div *ngSwitchCase="1">
+            1
+        </div>
+        <div *ngSwitchCase="2">
+            2
+        </div>
+        <div *ngSwitchCase="3">
+            3
+        </div>
+        <div *ngSwitchCase="4">
+            4
+        </div>
+        <div *ngSwitchCase="5">
+            5
+        </div>
+
+    </div>
 
 
     <button [disabled]="step<1" large fab fab-bottom fab-left fab-fixed (click)="lastStep()">
