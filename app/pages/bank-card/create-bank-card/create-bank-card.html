@@ -1,0 +1,52 @@
+<!--
+  Generated template for the CreateBankCardPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{"CREATE_BANK_CARD"|i18nSelect:i18NService.getI18nMapping()}}</ion-title>
+
+        <ion-buttons end style="width: 75%;">
+            <ion-segment disabled="true">
+                <ion-segment-button [ngClass]="{'segment-activated':step>=0}">
+                    1.身份验证
+                </ion-segment-button>
+                <ion-segment-button [ngClass]="{'segment-activated':step>=1}">
+                    2.信息录入
+                </ion-segment-button>
+                <ion-segment-button [ngClass]="{'segment-activated':step>=2}">
+                    3.设置密码
+                </ion-segment-button>
+                <ion-segment-button [ngClass]="{'segment-activated':step>=3}">
+                    4.综合签约
+                </ion-segment-button>
+                <ion-segment-button [ngClass]="{'segment-activated':step>=4}">
+                    5.影像采集
+                </ion-segment-button>
+                <ion-segment-button [ngClass]="{'segment-activated':step>=5}">
+                    6.信息确认
+                </ion-segment-button>
+            </ion-segment>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+
+
+    <button [disabled]="step<1" large fab fab-bottom fab-left fab-fixed (click)="lastStep()">
+        <ion-icon name="arrow-back"></ion-icon>
+    </button>
+
+    <button large fab fab-bottom fab-right fab-fixed (click)="nextStep()">
+        <ion-icon [name]="step==5?'checkmark':'arrow-forward'"></ion-icon>
+    </button>
+
+</ion-content>
