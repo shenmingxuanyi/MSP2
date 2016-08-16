@@ -259,6 +259,7 @@
 
         </div>
         <div *ngSwitchCase="1">
+
             <ion-grid responsive-lg>
                 <ion-row>
                     <ion-col width-80 offset-10>
@@ -333,9 +334,49 @@
                     </ion-col>
                 </ion-row>
             </ion-grid>
+
         </div>
         <div *ngSwitchCase="2">
-            2
+            <ion-grid responsive-lg>
+                <ion-row>
+                    <ion-col style="text-align: center;">
+                        <button style="text-align: center;width:15vw;height:15vw;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;;"
+                                (click)="readICCard();">
+                            <ion-icon name="card" style="font-size: 8vw;"></ion-icon>
+                        </button>
+                        <p text-center>点击读取银行卡</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col style="text-align: center;">
+                        <h2>6230 7021 9998 8788 82</h2>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-80 offset-10>
+                        <ion-card>
+                            <ion-card-header>
+                                <h2>设置密码</h2>
+                            </ion-card-header>
+                            <ion-list>
+
+                                <ion-item>
+                                    <ion-label>输入密码：</ion-label>
+                                    <ion-input type="password" clearInput
+                                               placeholder="请输入6位数字"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label>确认密码：</ion-label>
+                                    <ion-input type="password" clearInput
+                                               placeholder="请输入6位数字"></ion-input>
+                                </ion-item>
+
+                            </ion-list>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
         </div>
         <div *ngSwitchCase="3">
             3
