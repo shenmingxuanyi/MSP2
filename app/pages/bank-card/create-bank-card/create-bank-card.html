@@ -46,7 +46,7 @@
                     <ion-col>
                         <ion-card style="-webkit-border-radius: 10px;;-moz-border-radius: 10px;;border-radius: 10px;">
 
-                            <div style="position: relative;">
+                            <div class="transition" [ngClass]="{'filter-blur': !originalIDCard}"  style="position: relative;">
                                 <img src="images/business/id-card/id-card-01.jpg">
                                 <div style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;padding: 3%;font-size: 1.7rem;">
                                     <ion-grid style="height: 100%;">
@@ -149,7 +149,7 @@
                     <ion-col>
                         <ion-card style="-webkit-border-radius: 10px;;-moz-border-radius: 10px;;border-radius: 10px;">
 
-                            <div style="position: relative;">
+                            <div class="transition" [ngClass]="{'filter-blur': !verificationIDCard}" style="position: relative;">
                                 <img src="images/business/id-card/id-card-01.jpg">
                                 <div style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;padding: 3%;font-size: 1.7rem;">
                                     <ion-grid style="height: 100%;">

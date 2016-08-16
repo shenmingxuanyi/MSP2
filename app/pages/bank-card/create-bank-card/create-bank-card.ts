@@ -37,6 +37,10 @@ export class CreateBankCardPage {
     }
 
     readIDCard() {
+
+        this.originalIDCard = null;
+        this.verificationIDCard = null;
+
         let loader = this.loadingController.create({
             content: "正在读取身份证..."
         });
