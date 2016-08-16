@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, LoadingController} from 'ionic-angular';
 import {I18NService} from "../../../providers/i18n-service/i18n-service";
 import {IDCard} from "../../../model/business/IDCard";
 import {IDCardService} from "../../../providers/id-card-service/id-card-service";
@@ -21,14 +21,32 @@ export class CreateBankCardPage {
 
     step: number;
 
-    constructor(private navCtrl: NavController, public i18NService: I18NService, public idCardService: IDCardService) {
+    constructor(private navCtrl: NavController, public i18NService: I18NService, public idCardService: IDCardService, public loadingController: LoadingController) {
 
     }
 
 
     readIDCard() {
-        this.idCardService.read().then(idCardInfo=> {
+        let loader = this.loadingController.create({
+            content: "正在读取身份证..."
+        });
+        loader.present();
+        this.idCardService.read(1500).then(idCardInfo=> {
             this.originalIDCard = idCardInfo;
+            loader.dismiss().then(()=> {
+                this.validateIDCard();
+            });
+        });
+    }
+
+    validateIDCard() {
+        let loader = this.loadingController.create({
+            content: "正在验证身份证..."
+        });
+        loader.present();
+        this.idCardService.read(3000).then(idCardInfo=> {
+            this.verificationIDCard = idCardInfo;
+            loader.dismiss();
         });
     }
 
