@@ -36,7 +36,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content light-bg>
 
     <div [ngSwitch]="step">
         <div padding *ngSwitchCase="0">
@@ -46,7 +46,8 @@
                     <ion-col>
                         <ion-card style="-webkit-border-radius: 10px;;-moz-border-radius: 10px;;border-radius: 10px;">
 
-                            <div class="transition" [ngClass]="{'filter-blur': !originalIDCard}"  style="position: relative;">
+                            <div class="transition" [ngClass]="{'filter-blur': !originalIDCard}"
+                                 style="position: relative;">
                                 <img src="images/business/id-card/id-card-01.jpg">
                                 <div style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;padding: 3%;font-size: 1.7rem;">
                                     <ion-grid style="height: 100%;">
@@ -149,7 +150,8 @@
                     <ion-col>
                         <ion-card style="-webkit-border-radius: 10px;;-moz-border-radius: 10px;;border-radius: 10px;">
 
-                            <div class="transition" [ngClass]="{'filter-blur': !verificationIDCard}" style="position: relative;">
+                            <div class="transition" [ngClass]="{'filter-blur': !verificationIDCard}"
+                                 style="position: relative;">
                                 <img src="images/business/id-card/id-card-01.jpg">
                                 <div style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;padding: 3%;font-size: 1.7rem;">
                                     <ion-grid style="height: 100%;">
@@ -257,7 +259,80 @@
 
         </div>
         <div *ngSwitchCase="1">
-            1
+            <ion-grid responsive-lg>
+                <ion-row>
+                    <ion-col width-80 offset-10>
+                        <ion-card>
+                            <ion-card-header>
+                                <h2>信息录入</h2>
+                            </ion-card-header>
+                            <ion-list>
+
+                                <ion-item>
+                                    <ion-label dark>是否已婚：</ion-label>
+                                    <ion-toggle checked="false"></ion-toggle>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label dark>移动电话：</ion-label>
+                                    <ion-input type="text" clearInput
+                                               placeholder="请输入手机号码"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label dark>家庭住址：</ion-label>
+                                    <ion-input type="text" clearInput
+                                               placeholder="请输入家庭住址"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label dark>邮政编码：</ion-label>
+                                    <ion-input type="text" clearInput
+                                               placeholder="请输入邮政编码"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label dark>工作单位：</ion-label>
+                                    <ion-input type="text" clearInput
+                                               placeholder="请输入工作单位"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label dark>工作地址：</ion-label>
+                                    <ion-input type="text" clearInput
+                                               placeholder="请输入工作地址"></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label dark>行业：</ion-label>
+                                    <ion-select>
+                                        <ion-option value="nes">NES</ion-option>
+                                        <ion-option value="n64">Nintendo64</ion-option>
+                                        <ion-option value="ps">PlayStation</ion-option>
+                                        <ion-option value="genesis">Sega Genesis</ion-option>
+                                        <ion-option value="saturn">Sega Saturn</ion-option>
+                                        <ion-option value="snes">SNES</ion-option>
+                                    </ion-select>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-label dark>职业：</ion-label>
+                                    <ion-select>
+                                        <ion-option value="nes">NES</ion-option>
+                                        <ion-option value="n64">Nintendo64</ion-option>
+                                        <ion-option value="ps">PlayStation</ion-option>
+                                        <ion-option value="genesis">Sega Genesis</ion-option>
+                                        <ion-option value="saturn">Sega Saturn</ion-option>
+                                        <ion-option value="snes">SNES</ion-option>
+                                    </ion-select>
+                                </ion-item>
+
+
+                            </ion-list>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
         </div>
         <div *ngSwitchCase="2">
             2
