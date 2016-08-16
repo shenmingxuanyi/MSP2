@@ -55,18 +55,18 @@
                                                 <ion-row>
                                                     <ion-col>
                                                         <span style="color: #448FB9;">姓&nbsp;&nbsp;名</span>
-                                                        <span style="margin: 0 1rem;letter-spacing:.25rem;font-weight: bold;">彭志远</span>
+                                                        <span style="margin: 0 1rem;letter-spacing:.25rem;font-weight: bold;">{{originalIDCard?.name}}</span>
                                                     </ion-col>
                                                 </ion-row>
 
                                                 <ion-row>
                                                     <ion-col>
                                                         <span style="color: #448FB9;">性&nbsp;&nbsp;别</span>
-                                                        <span style="margin: 0 1rem;">男</span>
+                                                        <span style="margin: 0 1rem;">{{originalIDCard?.gender}}</span>
                                                     </ion-col>
                                                     <ion-col>
                                                         <span style="color: #448FB9;">民&nbsp;&nbsp;族</span>
-                                                        <span style="margin: 0 1rem;">汉</span>
+                                                        <span style="margin: 0 1rem;">{{originalIDCard?.nation}}</span>
                                                     </ion-col>
                                                 </ion-row>
 
@@ -74,11 +74,11 @@
                                                     <ion-col>
                                                         <span style="color: #448FB9;">出&nbsp;&nbsp;生</span>
                                                         <span style="margin: 0 1rem;">
-                                                            1983
+                                                            {{originalIDCard?.birthday|slice:0:4}}
                                                             <span style="color: #448FB9;">&nbsp;&nbsp;年&nbsp;&nbsp;</span>
-                                                            06
+                                                            {{originalIDCard?.birthday|slice:4:6}}
                                                             <span style="color: #448FB9;">&nbsp;&nbsp;月&nbsp;&nbsp;</span>
-                                                            09
+                                                            {{originalIDCard?.birthday|slice:6:8}}
                                                             <span style="color: #448FB9;">&nbsp;&nbsp;日&nbsp;&nbsp;</span>
                                                         </span>
                                                     </ion-col>
@@ -87,13 +87,14 @@
                                                 <ion-row>
                                                     <ion-col>
                                                         <span style="color: #448FB9;">住&nbsp;&nbsp;址</span>
-                                                        <span style="margin: 0 1rem;">河北省三河市燕郊区嫁娶发樱花元宝6号楼3单元601室</span>
+                                                        <span style="margin: 0 1rem;">{{originalIDCard?.address}}</span>
                                                     </ion-col>
                                                 </ion-row>
 
                                             </ion-col>
                                             <ion-col width-33 center>
-                                                <img src="images/user.png">
+                                                <img *ngIf="originalIDCard?.photoPath"
+                                                     [src]="originalIDCard?.photoPath">
                                             </ion-col>
                                         </ion-row>
 
@@ -101,11 +102,22 @@
                                             <ion-col>
                                                 <div style="font-size: 1.5rem;">
                                                     <span style="font-weight: bold;">发证机关&nbsp;&nbsp;</span>
-                                                    <span>三河市公安局</span>
+                                                    <span>{{originalIDCard?.registInstitution}}</span>
                                                 </div>
                                                 <div style="font-size: 1.5rem;">
                                                     <span style="font-weight: bold;">有效期限&nbsp;&nbsp;</span>
-                                                    <span>2012.09.08——2022.09.07</span>
+                                                    <span *ngIf="originalIDCard?.validStartDate">
+                                                        {{originalIDCard?.validStartDate|slice:0:4}}.
+                                                        {{originalIDCard?.validStartDate|slice:4:6}}.
+                                                        {{originalIDCard?.validStartDate|slice:6:8}}
+                                                        —
+                                                    </span>
+                                                    <span *ngIf="originalIDCard?.validEndDate">
+                                                        —
+                                                        {{originalIDCard?.validEndDate|slice:0:4}}.
+                                                        {{originalIDCard?.validEndDate|slice:4:6}}.
+                                                        {{originalIDCard?.validEndDate|slice:6:8}}
+                                                    </span>
                                                 </div>
                                             </ion-col>
                                         </ion-row>
@@ -113,7 +125,7 @@
                                         <ion-row style="height: 10%;" bottom>
                                             <ion-col>
                                                 <span style="color: #448FB9;">公民身份证号&nbsp;&nbsp;</span>
-                                                <span style="letter-spacing:.25rem;font-size: 2rem;font-weight: bold;">622039999888277387</span>
+                                                <span style="letter-spacing:.25rem;font-size: 2rem;font-weight: bold;">{{originalIDCard?.cardNum}}</span>
                                             </ion-col>
                                         </ion-row>
                                     </ion-grid>
@@ -127,7 +139,8 @@
                     </ion-col>
                     <ion-col width-20 style="text-align:center;">
 
-                        <button style="text-align: center;width:15vw;height:15vw;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;;">
+                        <button style="text-align: center;width:15vw;height:15vw;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;;"
+                                (click)="readIDCard();">
                             <ion-icon name="card" style="font-size: 8vw;"></ion-icon>
                         </button>
 
@@ -144,18 +157,18 @@
                                                 <ion-row>
                                                     <ion-col>
                                                         <span style="color: #448FB9;">姓&nbsp;&nbsp;名</span>
-                                                        <span style="margin: 0 1rem;letter-spacing:.25rem;font-weight: bold;">彭志远</span>
+                                                        <span style="margin: 0 1rem;letter-spacing:.25rem;font-weight: bold;">{{verificationIDCard?.name}}</span>
                                                     </ion-col>
                                                 </ion-row>
 
                                                 <ion-row>
                                                     <ion-col>
                                                         <span style="color: #448FB9;">性&nbsp;&nbsp;别</span>
-                                                        <span style="margin: 0 1rem;">男</span>
+                                                        <span style="margin: 0 1rem;">{{verificationIDCard?.gender}}</span>
                                                     </ion-col>
                                                     <ion-col>
                                                         <span style="color: #448FB9;">民&nbsp;&nbsp;族</span>
-                                                        <span style="margin: 0 1rem;">汉</span>
+                                                        <span style="margin: 0 1rem;">{{verificationIDCard?.nation}}</span>
                                                     </ion-col>
                                                 </ion-row>
 
@@ -163,11 +176,11 @@
                                                     <ion-col>
                                                         <span style="color: #448FB9;">出&nbsp;&nbsp;生</span>
                                                         <span style="margin: 0 1rem;">
-                                                            1983
+                                                            {{verificationIDCard?.birthday|slice:0:4}}
                                                             <span style="color: #448FB9;">&nbsp;&nbsp;年&nbsp;&nbsp;</span>
-                                                            06
+                                                            {{verificationIDCard?.birthday|slice:4:6}}
                                                             <span style="color: #448FB9;">&nbsp;&nbsp;月&nbsp;&nbsp;</span>
-                                                            09
+                                                            {{verificationIDCard?.birthday|slice:6:8}}
                                                             <span style="color: #448FB9;">&nbsp;&nbsp;日&nbsp;&nbsp;</span>
                                                         </span>
                                                     </ion-col>
@@ -176,13 +189,14 @@
                                                 <ion-row>
                                                     <ion-col>
                                                         <span style="color: #448FB9;">住&nbsp;&nbsp;址</span>
-                                                        <span style="margin: 0 1rem;">河北省三河市燕郊区嫁娶发樱花元宝6号楼3单元601室</span>
+                                                        <span style="margin: 0 1rem;">{{verificationIDCard?.address}}</span>
                                                     </ion-col>
                                                 </ion-row>
 
                                             </ion-col>
                                             <ion-col width-33 center>
-                                                <img src="images/user.png">
+                                                <img *ngIf="verificationIDCard?.photoPath"
+                                                     [src]="verificationIDCard?.photoPath">
                                             </ion-col>
                                         </ion-row>
 
@@ -190,11 +204,22 @@
                                             <ion-col>
                                                 <div style="font-size: 1.5rem;">
                                                     <span style="font-weight: bold;">发证机关&nbsp;&nbsp;</span>
-                                                    <span>三河市公安局</span>
+                                                    <span>{{verificationIDCard?.registInstitution}}</span>
                                                 </div>
                                                 <div style="font-size: 1.5rem;">
                                                     <span style="font-weight: bold;">有效期限&nbsp;&nbsp;</span>
-                                                    <span>2012.09.08——2022.09.07</span>
+                                                    <span *ngIf="verificationIDCard?.validStartDate">
+                                                        {{verificationIDCard?.validStartDate|slice:0:4}}.
+                                                        {{verificationIDCard?.validStartDate|slice:4:6}}.
+                                                        {{verificationIDCard?.validStartDate|slice:6:8}}
+                                                        —
+                                                    </span>
+                                                    <span *ngIf="verificationIDCard?.validEndDate">
+                                                        —
+                                                        {{verificationIDCard?.validEndDate|slice:0:4}}.
+                                                        {{verificationIDCard?.validEndDate|slice:4:6}}.
+                                                        {{verificationIDCard?.validEndDate|slice:6:8}}
+                                                    </span>
                                                 </div>
                                             </ion-col>
                                         </ion-row>
@@ -202,7 +227,7 @@
                                         <ion-row style="height: 10%;" bottom>
                                             <ion-col>
                                                 <span style="color: #448FB9;">公民身份证号&nbsp;&nbsp;</span>
-                                                <span style="letter-spacing:.25rem;font-size: 2rem;font-weight: bold;">622039999888277387</span>
+                                                <span style="letter-spacing:.25rem;font-size: 2rem;font-weight: bold;">{{verificationIDCard?.cardNum}}</span>
                                             </ion-col>
                                         </ion-row>
                                     </ion-grid>
