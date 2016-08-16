@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, LoadingController} from 'ionic-angular';
+import {NavController, LoadingController, AlertController} from 'ionic-angular';
 import {I18NService} from "../../../providers/i18n-service/i18n-service";
 import {IDCard} from "../../../model/business/IDCard";
 import {IDCardService} from "../../../providers/id-card-service/id-card-service";
@@ -17,14 +17,24 @@ import {IDCardService} from "../../../providers/id-card-service/id-card-service"
 export class CreateBankCardPage {
 
     originalIDCard: IDCard;
+
     verificationIDCard: IDCard;
 
     step: number;
 
-    constructor(private navCtrl: NavController, public i18NService: I18NService, public idCardService: IDCardService, public loadingController: LoadingController) {
+    constructor(private navCtrl: NavController, public i18NService: I18NService, public idCardService: IDCardService, public loadingController: LoadingController, public alertController: AlertController) {
 
     }
 
+    showAlert(options: {title?: string,message?: string,subTitle?: string}) {
+        let alert = this.alertController.create({
+            title: options.title || "提示信息",
+            subTitle: options.subTitle,
+            message: options.message,
+            buttons: ['知道了']
+        });
+        alert.present();
+    }
 
     readIDCard() {
         let loader = this.loadingController.create({
@@ -61,6 +71,14 @@ export class CreateBankCardPage {
     }
 
     nextStep() {
+
+        if (this.step == 0) {
+            if (!this.verificationIDCard) {
+                this.showAlert({message: "请验证身份信息"});
+                return;
+            }
+        }
+
         if (this.step < 5) {
             this.step++;
         }
