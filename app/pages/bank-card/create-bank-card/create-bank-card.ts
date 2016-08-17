@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, LoadingController, AlertController} from 'ionic-angular';
 import {I18NService} from "../../../providers/i18n-service/i18n-service";
-import {IDCard} from "../../../model/business/IDCard";
+import {IDCard} from "../../../models/business/IDCard";
 import {IDCardService} from "../../../providers/id-card-service/id-card-service";
 import {ICCardService} from "../../../providers/ic-card-service/ic-card-service";
 

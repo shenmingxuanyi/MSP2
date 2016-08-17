@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Events} from "ionic-angular/index";
-import {EVENTS} from "../../config/event.config";
-import {I18N_MAPPINGS_CONSTANT} from "../../config/i18n.config";
+import {EVENTS} from "../../configs/event.config";
+import {I18N_MAPPINGS_CONSTANT} from "../../configs/i18n.config";
 
 /*
  Generated class for the I18N provider.

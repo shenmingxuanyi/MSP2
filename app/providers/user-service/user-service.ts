@@ -1,12 +1,12 @@
-///<reference path="../../config/event.config.ts"/>
-///<reference path="../../config/storageKey.config.ts"/>
+///<reference path="../../configs/event.config.ts"/>
+///<reference path="../../configs/storageKey.config.ts"/>
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Storage, LocalStorage, Events} from "ionic-angular";
-import {EVENTS} from "../../config/event.config"
-import {RESTFUL_SERVICE_RESOURCES} from "../../config/resources.config"
-import {STORAGE_KEY} from "../../config/storageKey.config";
+import {EVENTS} from "../../configs/event.config"
+import {RESTFUL_SERVICE_RESOURCES} from "../../configs/resources.config"
+import {STORAGE_KEY} from "../../configs/storageKey.config";
 
 
 /*

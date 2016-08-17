@@ -4,8 +4,8 @@ import {StatusBar, Splashscreen} from 'ionic-native';
 
 import {MainPage} from "./pages/main/main";
 import {LoginPage} from "./pages/user-security/login/login";
-import {EVENTS} from "./config/event.config";
-import {PLATFORM_UI_CONFIG} from "./config/platform.config";
+import {EVENTS} from "./configs/event.config";
+import {PLATFORM_UI_CONFIG} from "./configs/platform.config";
 import {I18NService} from "./providers/i18n-service/i18n-service";
 import {ResetPasswordPage} from "./pages/user-security/reset-password/reset-password";
 import {NotificationsPage} from "./pages/notifications/notifications";

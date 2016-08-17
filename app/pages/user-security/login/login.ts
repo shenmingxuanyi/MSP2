@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, Events, LoadingController, ToastController} from 'ionic-angular';
-import {EVENTS} from "../../../config/event.config";
+import {EVENTS} from "../../../configs/event.config";
 import {I18NService} from "../../../providers/i18n-service/i18n-service";
 import {UserService} from "../../../providers/user-service/user-service"
 
