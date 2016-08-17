@@ -1,3 +1,12 @@
 .login {
 
+  background-color: #4CAEDD;
+
+  background-image: url("../../images/system/login-bg.png"), -webkit-linear-gradient(0deg, #4CAEDD, #7ED5F1, #4CAEDD);
+  background-image: url("../../images/system/login-bg.png"), -moz-linear-gradient(0deg, #4CAEDD, #7ED5F1, #4CAEDD);
+  background-image: url("../../images/system/login-bg.png"), linear-gradient(0deg, #4CAEDD, #7ED5F1, #4CAEDD);
+
+  -webkit-background-size:100% 100%;
+  background-size:100% 100%;
+
 }

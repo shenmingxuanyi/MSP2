@@ -2,26 +2,35 @@
 
 
     <ion-grid responsive-lg
-              style="margin-top:-moz-calc((100vh - 300px) / 2);margin-top:-webkit-calc((100vh - 256px) / 2);margin-top:calc((100vh - 256px) / 2);">
+              style="margin-top:-moz-calc((100vh - 320px) / 2);margin-top:-webkit-calc((100vh - 320px) / 2);margin-top:calc((100vh - 320px) / 2);">
         <ion-row center>
             <ion-col center offset-25 width-50>
 
                 <ion-card>
-                    <ion-card-header>
-                        <h2>{{'APP_TITLE'|i18nSelect:i18NService.getI18nMapping()}}</h2>
+                    <ion-card-header style="padding-top: 5px;padding-bottom: 5px;">
+
+                        <ion-row cenetr>
+                            <ion-col center width-50 text-left>
+                                <img src="images/system/logo.png" style="height: 60px;width: auto;display: inline-block;">
+                            </ion-col>
+                            <ion-col center width-50 text-right>
+                                <span text-right style="font-weight: bold;font-size: 2.5rem;color: #4CAEDD;text-shadow: 1px 1px 2px #7ED5F1;">移动展业平台</span>
+                            </ion-col>
+                        </ion-row>
+
                     </ion-card-header>
 
                     <ion-list>
 
                         <ion-item large>
-                            <ion-label>{{'USERNAME'|i18nSelect:i18NService.getI18nMapping()}}：</ion-label>
+                            <ion-label dark>{{'USERNAME'|i18nSelect:i18NService.getI18nMapping()}}：</ion-label>
                             <ion-input type="text" clearInput
                                        [(ngModel)]="username"
                                        placeholder="{{('PLEASE_INPUT'|i18nSelect:i18NService.getI18nMapping())+('USERNAME'|i18nSelect:i18NService.getI18nMapping())}}"></ion-input>
                         </ion-item>
 
                         <ion-item large>
-                            <ion-label>{{'PASSWORD'|i18nSelect:i18NService.getI18nMapping()}}：</ion-label>
+                            <ion-label dark>{{'PASSWORD'|i18nSelect:i18NService.getI18nMapping()}}：</ion-label>
                             <ion-input type="password" clearInput
                                        [(ngModel)]="password"
                                        placeholder="{{('PLEASE_INPUT'|i18nSelect:i18NService.getI18nMapping())+('PASSWORD'|i18nSelect:i18NService.getI18nMapping())}}"></ion-input>

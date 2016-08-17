@@ -1,9 +1,9 @@
 <ion-menu [content]="content">
 
-    <ion-content>
+    <ion-content class="app-menu">
 
         <ion-list>
-            <button menuClose ion-item (click)="openMenuItem(personInfoPage)">
+            <button class="button-transparent" menuClose ion-item (click)="openMenuItem(personInfoPage)">
                 <ion-thumbnail item-left>
                     <img src="images/user.png">
                 </ion-thumbnail>
@@ -25,12 +25,12 @@
 
             <ion-list-header>{{'PERSON_SETTING'|i18nSelect:i18NService.getI18nMapping()}}</ion-list-header>
 
-            <button menuClose ion-item (click)="openMenuItem(changePasswordPage)">
+            <button class="button-transparent" menuClose ion-item (click)="openMenuItem(changePasswordPage)">
                 <ion-icon primary name='lock' item-left></ion-icon>
                 {{'CHANGE_PASSWORD'|i18nSelect:i18NService.getI18nMapping()}}
             </button>
 
-            <button menuClose ion-item (click)="openMenuItem(notificationsPage)">
+            <button class="button-transparent" menuClose ion-item (click)="openMenuItem(notificationsPage)">
                 <ion-icon primary name='notifications' item-left></ion-icon>
                 {{'NOTIFICATION'|i18nSelect:i18NService.getI18nMapping()}}
                 <ion-badge danger item-right>
@@ -43,7 +43,7 @@
         <div padding-top></div>
 
         <ion-list>
-            <button menuClose ion-item (click)="openMenuItem(systemSettingPage)">
+            <button class="button-transparent" menuClose ion-item (click)="openMenuItem(systemSettingPage)">
                 <ion-icon primary name='settings' item-left></ion-icon>
                 {{'SYSTEM_SETTING'|i18nSelect:i18NService.getI18nMapping()}}
             </button>
@@ -52,7 +52,7 @@
         <div padding-top></div>
 
         <ion-list>
-            <button menuClose ion-item (click)="openMenuItem(systemSettingPage)">
+            <button class="button-transparent" menuClose ion-item (click)="openMenuItem(systemSettingPage)">
                 <ion-icon primary name='hammer' item-left></ion-icon>
                 {{'BUSINESS_SETTING'|i18nSelect:i18NService.getI18nMapping()}}
             </button>

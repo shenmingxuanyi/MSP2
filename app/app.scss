@@ -1,3 +1,19 @@
 .app {
 
+  .app-menu {
+    //background-color: #4CAEDD;
+    //
+    //background-image: -webkit-linear-gradient(0deg, #4CAEDD, #7ED5F1, #4CAEDD);
+    //background-image: -moz-linear-gradient(0deg, #4CAEDD, #7ED5F1, #4CAEDD);
+    //background-image: linear-gradient(0deg, #4CAEDD, #7ED5F1, #4CAEDD);
+
+    .button-transparent:not(.activated) {
+      background-color: transparent;
+    }
+    .button-transparent.activated {
+      background-color: rgba(0, 0, 0, .05);
+    }
+
+  }
+
 }
