@@ -1,3 +1,8 @@
 .choice-bank-card {
-
+  .button-transparent:not(.activated) {
+    background-color: transparent;
+  }
+  .button-transparent.activated {
+    background-color: rgba(0, 0, 0, .05);
+  }
 }

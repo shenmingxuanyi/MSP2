@@ -25,7 +25,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="choice-bank-card">
 
     <ion-slides pager="true">
         <ion-slide *ngFor="let cards of cardList">
@@ -34,8 +34,10 @@
                 <ion-row>
                     <ion-col width-33 *ngFor="let card of cards">
                         <ion-list no-lines>
-                            <button style="padding: -16px;" ion-item (click)="createCard(card);">
-                                <img style="-webkit-border-radius:  6px;;-moz-border-radius:  6px;;border-radius: 6px;"
+                            <button class="button-transparent"
+                                    style="-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px;"
+                                    ion-item (click)="createCard(card);">
+                                <img style="-webkit-border-radius:  10px;;-moz-border-radius:  10px;;border-radius: 10px;"
                                      [src]="card?.image">
                             </button>
                             <h2 style="text-align: center">
