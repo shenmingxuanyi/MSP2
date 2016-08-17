@@ -3,6 +3,7 @@ import {NavController, LoadingController, AlertController} from 'ionic-angular';
 import {I18NService} from "../../../providers/i18n-service/i18n-service";
 import {IDCard} from "../../../model/business/IDCard";
 import {IDCardService} from "../../../providers/id-card-service/id-card-service";
+import {ICCardService} from "../../../providers/ic-card-service/ic-card-service";
 
 /*
  Generated class for the CreateBankCardPage page.
@@ -12,7 +13,7 @@ import {IDCardService} from "../../../providers/id-card-service/id-card-service"
  */
 @Component({
     templateUrl: 'build/pages/bank-card/create-bank-card/create-bank-card.html',
-    providers: [IDCardService]
+    providers: [IDCardService, ICCardService]
 })
 export class CreateBankCardPage {
 
@@ -20,9 +21,11 @@ export class CreateBankCardPage {
 
     verificationIDCard: IDCard;
 
+    icCardNumber: string;
+
     step: number;
 
-    constructor(private navCtrl: NavController, public i18NService: I18NService, public idCardService: IDCardService, public loadingController: LoadingController, public alertController: AlertController) {
+    constructor(private navCtrl: NavController, public i18NService: I18NService, public idCardService: IDCardService, public loadingController: LoadingController, public alertController: AlertController, public icCardService: ICCardService) {
 
     }
 
@@ -62,6 +65,23 @@ export class CreateBankCardPage {
             this.verificationIDCard = idCardInfo;
             loader.dismiss();
         });
+    }
+
+    readICCard() {
+        this.icCardNumber = null;
+
+        let loader = this.loadingController.create({
+            content: "正在读取银行卡..."
+        });
+        
+        loader.present();
+
+        this.icCardService
+            .read()
+            .then((number)=> {
+                this.icCardNumber = number;
+                loader.dismiss();
+            });
     }
 
     ionViewWillEnter() {

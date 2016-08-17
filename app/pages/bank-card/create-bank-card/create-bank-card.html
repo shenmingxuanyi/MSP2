@@ -337,6 +337,7 @@
 
         </div>
         <div *ngSwitchCase="2">
+
             <ion-grid responsive-lg>
                 <ion-row>
                     <ion-col style="text-align: center;">
@@ -345,13 +346,10 @@
                             <ion-icon name="card" style="font-size: 8vw;"></ion-icon>
                         </button>
                         <p text-center>点击读取银行卡</p>
+                        <h1 *ngIf="icCardNumber">{{icCardNumber}}</h1>
                     </ion-col>
                 </ion-row>
-                <ion-row>
-                    <ion-col style="text-align: center;">
-                        <h2>6230 7021 9998 8788 82</h2>
-                    </ion-col>
-                </ion-row>
+
                 <ion-row>
                     <ion-col width-80 offset-10>
                         <ion-card>
@@ -361,13 +359,13 @@
                             <ion-list>
 
                                 <ion-item>
-                                    <ion-label>输入密码：</ion-label>
+                                    <ion-label dark>输入密码：</ion-label>
                                     <ion-input type="password" clearInput
                                                placeholder="请输入6位数字"></ion-input>
                                 </ion-item>
 
                                 <ion-item>
-                                    <ion-label>确认密码：</ion-label>
+                                    <ion-label dark>确认密码：</ion-label>
                                     <ion-input type="password" clearInput
                                                placeholder="请输入6位数字"></ion-input>
                                 </ion-item>
@@ -377,12 +375,248 @@
                     </ion-col>
                 </ion-row>
             </ion-grid>
+
         </div>
         <div *ngSwitchCase="3">
-            3
+
+            <ion-grid responsive-lg>
+                <ion-row>
+                    <ion-col width-80 offset-10>
+
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-item>
+                                    <ion-label>开通银信通</ion-label>
+                                    <ion-toggle [(ngModel)]="yxt" checked="false"></ion-toggle>
+                                </ion-item>
+                            </ion-card-header>
+                            <ion-card-content [hidden]="!yxt">
+                                <ion-list>
+                                    <ion-item>
+                                        <ion-label fixed>手机号码</ion-label>
+                                        <ion-input type="text" value="" clearInput placeholder="请输入手机号码"></ion-input>
+                                    </ion-item>
+                                </ion-list>
+                            </ion-card-content>
+                        </ion-card>
+
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-item>
+                                    <ion-label>开通支付宝</ion-label>
+                                    <ion-toggle [(ngModel)]="zfb" checked="false"></ion-toggle>
+                                </ion-item>
+                            </ion-card-header>
+                            <ion-card-content [hidden]="!zfb">
+                                <ion-list>
+                                    <ion-item>
+                                        <ion-label fixed>手机号码</ion-label>
+                                        <ion-input clearInput type="text" value="" placeholder="请输入手机号码"></ion-input>
+                                    </ion-item>
+                                    <ion-item>
+                                        <ion-label fixed>支付限额</ion-label>
+                                        <ion-input clearInput type="text" value="" placeholder="请输入支付限额"></ion-input>
+                                    </ion-item>
+                                    <ion-item>
+                                        <ion-label fixed>提现限额</ion-label>
+                                        <ion-input clearInput type="text" value="" placeholder="请输入提现限额"></ion-input>
+                                    </ion-item>
+                                </ion-list>
+                            </ion-card-content>
+                        </ion-card>
+
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-item>
+                                    <ion-label>开通网上银行</ion-label>
+                                    <ion-toggle [(ngModel)]="wsyh" checked="false"></ion-toggle>
+                                </ion-item>
+                            </ion-card-header>
+                            <ion-card-content [hidden]="!wsyh">
+                                <ion-list radio-group>
+
+                                    <ion-item>
+                                        <ion-label>普通版</ion-label>
+                                        <ion-radio value="golang" checked="true"></ion-radio>
+                                    </ion-item>
+                                    <ion-item>
+                                        <ion-label>短信版</ion-label>
+                                        <ion-radio value="rust"></ion-radio>
+                                    </ion-item>
+                                    <ion-item>
+                                        <ion-label>动态口令版</ion-label>
+                                        <ion-radio value="python"></ion-radio>
+                                    </ion-item>
+                                    <ion-item>
+                                        <ion-label>安全证书版</ion-label>
+                                        <ion-radio value="ruby"></ion-radio>
+                                    </ion-item>
+                                </ion-list>
+                            </ion-card-content>
+                        </ion-card>
+
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-item>
+                                    <ion-label>开通银行支付</ion-label>
+                                    <ion-toggle [(ngModel)]="yhzf" checked="false"></ion-toggle>
+                                </ion-item>
+                            </ion-card-header>
+                            <ion-card-content [hidden]="!yhzf">
+                                <ion-list>
+
+                                    <ion-item>
+
+                                        <ion-label>支付限额</ion-label>
+                                        <ion-input type="text" value="" clearInput placeholder="请输入支付限额"></ion-input>
+
+                                    </ion-item>
+
+                                </ion-list>
+                            </ion-card-content>
+                        </ion-card>
+
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-item>
+                                    <ion-label>开通电话银行</ion-label>
+                                    <ion-toggle [(ngModel)]="dhyh" checked="false"></ion-toggle>
+                                </ion-item>
+                            </ion-card-header>
+                        </ion-card>
+
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-item>
+                                    <ion-label>同意并阅读<a href="http://www.baidu.com">《XXXX协议》</a>和<a
+                                            href="http://www.baidu.com">《XXXX协议》</a>。
+                                    </ion-label>
+                                    <ion-toggle item-left checked="false"></ion-toggle>
+                                </ion-item>
+                            </ion-card-header>
+                        </ion-card>
+
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+
         </div>
         <div *ngSwitchCase="4">
-            4
+
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-33>
+
+                        <ion-card>
+
+                            <img src="images/business/background/originalImage.png"/>
+
+                            <ion-card-content>
+                                <h2 class="card-title">
+                                    身份证正面
+                                </h2>
+                            </ion-card-content>
+
+                            <ion-row no-padding>
+                                <ion-col>
+                                    <button clear large primary>
+                                        <ion-icon name='camera'></ion-icon>
+                                        拍照
+                                    </button>
+                                </ion-col>
+                                <ion-col text-center>
+                                    <button clear large primary>
+                                        <ion-icon name='trash'></ion-icon>
+                                        删除
+                                    </button>
+                                </ion-col>
+                                <ion-col text-right>
+                                    <button clear large primary>
+                                        <ion-icon name='cloud-upload'></ion-icon>
+                                        上传
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+
+                        </ion-card>
+
+                    </ion-col>
+                    <ion-col width-33>
+
+                        <ion-card>
+
+                            <img src="images/business/background/originalImage.png"/>
+
+                            <ion-card-content>
+                                <h2 class="card-title">
+                                    身份证反面
+                                </h2>
+                            </ion-card-content>
+
+                            <ion-row no-padding>
+                                <ion-col>
+                                    <button clear large primary>
+                                        <ion-icon name='camera'></ion-icon>
+                                        拍照
+                                    </button>
+                                </ion-col>
+                                <ion-col text-center>
+                                    <button clear large primary>
+                                        <ion-icon name='trash'></ion-icon>
+                                        删除
+                                    </button>
+                                </ion-col>
+                                <ion-col text-right>
+                                    <button clear large primary>
+                                        <ion-icon name='cloud-upload'></ion-icon>
+                                        上传
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+
+                        </ion-card>
+
+                    </ion-col>
+                    <ion-col width-33>
+
+                        <ion-card>
+
+                            <img src="images/business/background/originalImage.png"/>
+
+                            <ion-card-content>
+                                <h2 class="card-title">
+                                    客户本人于证件及借记卡
+                                </h2>
+                            </ion-card-content>
+
+                            <ion-row no-padding>
+                                <ion-col>
+                                    <button clear large primary>
+                                        <ion-icon name='camera'></ion-icon>
+                                        拍照
+                                    </button>
+                                </ion-col>
+                                <ion-col text-center>
+                                    <button clear large primary>
+                                        <ion-icon name='trash'></ion-icon>
+                                        删除
+                                    </button>
+                                </ion-col>
+                                <ion-col text-right>
+                                    <button clear large primary>
+                                        <ion-icon name='cloud-upload'></ion-icon>
+                                        上传
+                                    </button>
+                                </ion-col>
+                            </ion-row>
+
+                        </ion-card>
+
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
         </div>
         <div *ngSwitchCase="5">
             5
