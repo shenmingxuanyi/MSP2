@@ -34,7 +34,7 @@
                 <ion-row>
                     <ion-col width-33 *ngFor="let card of cards">
                         <ion-list no-lines>
-                            <button ion-item (click)="createCard(card);">
+                            <button style="padding: -16px;" ion-item (click)="createCard(card);">
                                 <img style="-webkit-border-radius:  6px;;-moz-border-radius:  6px;;border-radius: 6px;"
                                      [src]="card?.image">
                             </button>
