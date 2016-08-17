@@ -1,12 +1,104 @@
 .login {
 
+
   background-color: #4CAEDD;
 
-  background-image: url("../../images/system/login-bg.png"), -webkit-linear-gradient(0deg, #4CAEDD, #7ED5F1, #4CAEDD);
-  background-image: url("../../images/system/login-bg.png"), -moz-linear-gradient(0deg, #4CAEDD, #7ED5F1, #4CAEDD);
-  background-image: url("../../images/system/login-bg.png"), linear-gradient(0deg, #4CAEDD, #7ED5F1, #4CAEDD);
+  background-image: url("../../images/system/yun-01.png"), -webkit-linear-gradient(0deg, #4CAEDD, #88dff7, #4CAEDD);
+  background-image: url("../../images/system/yun-01.png"), -moz-linear-gradient(0deg, #4CAEDD, #88dff7, #4CAEDD);
+  background-image: url("../../images/system/yun-01.png"), linear-gradient(0deg, #4CAEDD, #88dff7, #4CAEDD);
 
-  -webkit-background-size:100% 100%;
-  background-size:100% 100%;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  background-size: 100% auto;
+
+  background-position: bottom;
+
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  .yun-01 {
+    -moz-animation: yun-left2Right ease-out 30000ms infinite;
+    -webkit-animation: yun-left2Right ease-out 30000ms infinite;
+    -o-animation: yun-left2Right ease-out 30000ms infinite;
+    animation: yun-left2Right ease-out 30000ms infinite;
+  }
+
+  .yun-02 {
+    -moz-animation: yun-left2Right ease-out 40000ms infinite;
+    -webkit-animation: yun-left2Right ease-out 40000ms infinite;
+    -o-animation: yun-left2Right ease-out 40000ms infinite;
+    animation: yun-left2Right ease-out 40000ms infinite;
+  }
+
+  .yun-03 {
+    -webkit-animation: yun-left2Right ease-out 25000ms infinite;
+    -o-animation: yun-left2Right ease-out 25000ms infinite;
+    animation: yun-left2Right ease-out 25000ms infinite;
+  }
+
+  .yun-04 {
+    -moz-animation: yun-left2Right ease-out 50000ms infinite;
+    -webkit-animation: yun-left2Right ease-out 50000ms infinite;
+    -o-animation: yun-left2Right ease-out 50000ms infinite;
+    animation: yun-left2Right ease-out 50000ms infinite;
+  }
+
+  .yun-05 {
+    -moz-animation: yun-left2Right ease-out 100000ms infinite;
+    -webkit-animation: yun-left2Right ease-out 100000ms infinite;
+    -o-animation: yun-left2Right ease-out 100000ms infinite;
+    animation: yun-left2Right ease-out 100000ms infinite;
+  }
+
+  .yun-06 {
+    -moz-animation: yun-left2Right ease-out 120000ms infinite;
+    -webkit-animation: yun-left2Right ease-out 120000ms infinite;
+    -o-animation: yun-left2Right ease-out 120000ms infinite;
+    animation: yun-left2Right ease-out 120000ms infinite;
+  }
 
 }
+
+@-o-keyframes yun-left2Right {
+  0% {
+    -moz-transform: scale(1);
+
+  }
+  100% {
+    -o-transform: scale(.25, .25) translate(100vw, 5vh);
+  }
+}
+
+@-moz-keyframes yun-left2Right {
+  0% {
+    -moz-transform: scale(1);
+
+  }
+  100% {
+    -moz-transform: scale(.25, .25) translate(100vw, 5vh);
+  }
+}
+
+@-webkit-keyframes yun-left2Right {
+  0% {
+    -webkit-transform: scale(1);
+
+  }
+  100% {
+    left: 125vw;
+    -webkit-transform: scale(.25, .25) translate(100vw, 5vh);
+  }
+}
+
+@keyframes yun-left2Right {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    left: 125vw;
+    transform: scale(.25, .25) translate(100vw, 5vh);
+  }
+}
+
+

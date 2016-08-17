@@ -1,5 +1,25 @@
 <ion-content class="login">
 
+    <img class="yun-01" style="position: absolute;top: 8vh;left: -30rem;;z-index: -1;height: 10rem;"
+         src="images/system/yun-02.png">
+
+    <img class="yun-02" style="position: absolute;top: 21vh;left: -30rem;z-index: -1;height: 11rem;"
+         src="images/system/yun-02.png">
+
+    <img class="yun-03" style="position: absolute;top: 33vh;left: -24rem;z-index: -1;height: 8rem;"
+         src="images/system/yun-02.png">
+
+    <img class="yun-04" style="position: absolute;top: 48vh;left: -27rem;z-index: -1;height: 9rem;"
+         src="images/system/yun-02.png">
+
+
+    <img class="yun-05" style="position: absolute;top: 20vh;left: -20rem;z-index: -1;height: 18rem;"
+         src="images/system/qiqiu-01.png">
+
+
+    <img class="yun-06" style="position: absolute;top: 50vh;left: -20rem;z-index: -1;height: 14rem;"
+         src="images/system/qiqiu-02.png">
+
 
     <ion-grid responsive-lg
               style="margin-top:-moz-calc((100vh - 320px) / 2);margin-top:-webkit-calc((100vh - 320px) / 2);margin-top:calc((100vh - 320px) / 2);">
@@ -11,32 +31,36 @@
 
                         <ion-row cenetr>
                             <ion-col center width-50 text-left>
-                                <img src="images/system/logo.png" style="height: 60px;width: auto;display: inline-block;">
+                                <img src="images/system/logo.png"
+                                     style="height: 60px;width: auto;display: inline-block;">
                             </ion-col>
                             <ion-col center width-50 text-right>
-                                <span text-right style="font-weight: bold;font-size: 2.5rem;color: #4CAEDD;text-shadow: 1px 1px 2px #7ED5F1;">移动展业平台</span>
+                                <span text-right
+                                      style="font-weight: bold;font-size: 2.5rem;color: #4CAEDD;text-shadow: 1px 1px 2px #7ED5F1;">移动展业平台</span>
                             </ion-col>
                         </ion-row>
 
                     </ion-card-header>
 
-                    <ion-list>
+                    <ion-card-content>
+                        <ion-list>
 
-                        <ion-item large>
-                            <ion-label dark>{{'USERNAME'|i18nSelect:i18NService.getI18nMapping()}}：</ion-label>
-                            <ion-input type="text" clearInput
-                                       [(ngModel)]="username"
-                                       placeholder="{{('PLEASE_INPUT'|i18nSelect:i18NService.getI18nMapping())+('USERNAME'|i18nSelect:i18NService.getI18nMapping())}}"></ion-input>
-                        </ion-item>
+                            <ion-item large>
+                                <ion-label dark>{{'USERNAME'|i18nSelect:i18NService.getI18nMapping()}}：</ion-label>
+                                <ion-input type="text" clearInput
+                                           [(ngModel)]="username"
+                                           placeholder="{{('PLEASE_INPUT'|i18nSelect:i18NService.getI18nMapping())+('USERNAME'|i18nSelect:i18NService.getI18nMapping())}}"></ion-input>
+                            </ion-item>
 
-                        <ion-item large>
-                            <ion-label dark>{{'PASSWORD'|i18nSelect:i18NService.getI18nMapping()}}：</ion-label>
-                            <ion-input type="password" clearInput
-                                       [(ngModel)]="password"
-                                       placeholder="{{('PLEASE_INPUT'|i18nSelect:i18NService.getI18nMapping())+('PASSWORD'|i18nSelect:i18NService.getI18nMapping())}}"></ion-input>
-                        </ion-item>
+                            <ion-item large>
+                                <ion-label dark>{{'PASSWORD'|i18nSelect:i18NService.getI18nMapping()}}：</ion-label>
+                                <ion-input type="password" clearInput
+                                           [(ngModel)]="password"
+                                           placeholder="{{('PLEASE_INPUT'|i18nSelect:i18NService.getI18nMapping())+('PASSWORD'|i18nSelect:i18NService.getI18nMapping())}}"></ion-input>
+                            </ion-item>
 
-                    </ion-list>
+                        </ion-list>
+                    </ion-card-content>
 
                 </ion-card>
 
