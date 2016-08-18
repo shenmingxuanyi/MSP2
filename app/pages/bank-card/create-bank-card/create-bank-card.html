@@ -50,7 +50,7 @@
                             <div class="transition" [ngClass]="{'filter-blur': !originalIDCard}"
                                  style="position: relative;">
                                 <img src="images/business/id-card/id-card-01.jpg">
-                                <div style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;padding: 3%;font-size: 1.7rem;">
+                                <div style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;padding: 2%;font-size: 1.25vw;">
                                     <ion-grid style="height: 100%;">
                                         <ion-row style="height: 75%;" top>
                                             <ion-col>
@@ -102,11 +102,11 @@
 
                                         <ion-row style="height: 15%;" bottom>
                                             <ion-col>
-                                                <div style="font-size: 1.5rem;">
+                                                <div style="font-size: 1.1vw;">
                                                     <span style="font-weight: bold;">发证机关&nbsp;&nbsp;</span>
                                                     <span>{{originalIDCard?.registInstitution}}</span>
                                                 </div>
-                                                <div style="font-size: 1.5rem;">
+                                                <div style="font-size: 1.1vw;">
                                                     <span style="font-weight: bold;">有效期限&nbsp;&nbsp;</span>
                                                     <span *ngIf="originalIDCard?.validStartDate">
                                                         {{originalIDCard?.validStartDate|slice:0:4}}.
@@ -127,7 +127,7 @@
                                         <ion-row style="height: 10%;" bottom>
                                             <ion-col>
                                                 <span style="color: #448FB9;">公民身份证号&nbsp;&nbsp;</span>
-                                                <span style="letter-spacing:.25rem;font-size: 2rem;font-weight: bold;">{{originalIDCard?.cardNum}}</span>
+                                                <span style="letter-spacing:.25rem;font-size: 1.3vw;font-weight: bold;">{{originalIDCard?.cardNum}}</span>
                                             </ion-col>
                                         </ion-row>
                                     </ion-grid>
@@ -154,7 +154,7 @@
                             <div class="transition" [ngClass]="{'filter-blur': !verificationIDCard}"
                                  style="position: relative;">
                                 <img src="images/business/id-card/id-card-01.jpg">
-                                <div style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;padding: 3%;font-size: 1.7rem;">
+                                <div style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;padding: 2%;font-size: 1.25vw;">
                                     <ion-grid style="height: 100%;">
                                         <ion-row style="height: 75%;" top>
                                             <ion-col>
@@ -206,11 +206,11 @@
 
                                         <ion-row style="height: 15%;" bottom>
                                             <ion-col>
-                                                <div style="font-size: 1.5rem;">
+                                                <div style="font-size: 1.1vw;">
                                                     <span style="font-weight: bold;">发证机关&nbsp;&nbsp;</span>
                                                     <span>{{verificationIDCard?.registInstitution}}</span>
                                                 </div>
-                                                <div style="font-size: 1.5rem;">
+                                                <div style="font-size: 1.1vw;">
                                                     <span style="font-weight: bold;">有效期限&nbsp;&nbsp;</span>
                                                     <span *ngIf="verificationIDCard?.validStartDate">
                                                         {{verificationIDCard?.validStartDate|slice:0:4}}.
@@ -231,7 +231,7 @@
                                         <ion-row style="height: 10%;" bottom>
                                             <ion-col>
                                                 <span style="color: #448FB9;">公民身份证号&nbsp;&nbsp;</span>
-                                                <span style="letter-spacing:.25rem;font-size: 2rem;font-weight: bold;">{{verificationIDCard?.cardNum}}</span>
+                                                <span style="letter-spacing:.25rem;font-size: 1.3vw;font-weight: bold;">{{verificationIDCard?.cardNum}}</span>
                                             </ion-col>
                                         </ion-row>
                                     </ion-grid>
@@ -610,19 +610,19 @@
 
                             <ion-row no-padding>
                                 <ion-col>
-                                    <button clear large primary (click)="cameraPhoto(0)">
+                                    <button clear primary (click)="cameraPhoto(0)">
                                         <ion-icon name='camera'></ion-icon>
                                         拍照
                                     </button>
                                 </ion-col>
                                 <ion-col text-center>
-                                    <button clear large danger (click)="deletePhoto(0)">
+                                    <button clear danger (click)="deletePhoto(0)">
                                         <ion-icon name='trash'></ion-icon>
                                         删除
                                     </button>
                                 </ion-col>
                                 <ion-col text-right>
-                                    <button clear large primary>
+                                    <button clear primary>
                                         <ion-icon name='cloud-upload'></ion-icon>
                                         上传
                                     </button>
@@ -647,19 +647,19 @@
 
                             <ion-row no-padding>
                                 <ion-col>
-                                    <button clear large primary (click)="cameraPhoto(1)">
+                                    <button clear primary (click)="cameraPhoto(1)">
                                         <ion-icon name='camera'></ion-icon>
                                         拍照
                                     </button>
                                 </ion-col>
                                 <ion-col text-center>
-                                    <button clear large danger (click)="deletePhoto(1)">
+                                    <button clear danger (click)="deletePhoto(1)">
                                         <ion-icon name='trash'></ion-icon>
                                         删除
                                     </button>
                                 </ion-col>
                                 <ion-col text-right>
-                                    <button clear large primary>
+                                    <button clear primary>
                                         <ion-icon name='cloud-upload'></ion-icon>
                                         上传
                                     </button>
@@ -684,19 +684,19 @@
 
                             <ion-row no-padding>
                                 <ion-col>
-                                    <button clear large primary (click)="cameraPhoto(2)">
+                                    <button clear primary (click)="cameraPhoto(2)">
                                         <ion-icon name='camera'></ion-icon>
                                         拍照
                                     </button>
                                 </ion-col>
                                 <ion-col text-center>
-                                    <button clear large danger (click)="deletePhoto(2)">
+                                    <button clear danger (click)="deletePhoto(2)">
                                         <ion-icon name='trash'></ion-icon>
                                         删除
                                     </button>
                                 </ion-col>
                                 <ion-col text-right>
-                                    <button clear large primary>
+                                    <button clear primary>
                                         <ion-icon name='cloud-upload'></ion-icon>
                                         上传
                                     </button>
@@ -710,7 +710,6 @@
             </ion-grid>
 
         </div>
-
         <div *ngSwitchCase="5">
 
             <ion-grid responsive-lg>
