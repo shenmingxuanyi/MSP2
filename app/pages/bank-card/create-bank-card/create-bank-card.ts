@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, LoadingController, AlertController} from 'ionic-angular';
+import {NavController, LoadingController, AlertController, ToastController} from 'ionic-angular';
 import {I18NService} from "../../../providers/i18n-service/i18n-service";
 import {IDCard} from "../../../models/business/IDCard";
 import {IDCardService} from "../../../providers/id-card-service/id-card-service";
@@ -28,7 +28,7 @@ export class CreateBankCardPage {
 
     enclosures: Array<string> = [null, null, null];
 
-    constructor(private navCtrl: NavController, public i18NService: I18NService, public idCardService: IDCardService, public loadingController: LoadingController, public alertController: AlertController, public icCardService: ICCardService) {
+    constructor(private navCtrl: NavController, public i18NService: I18NService, public idCardService: IDCardService, public loadingController: LoadingController, public alertController: AlertController, public icCardService: ICCardService, private toastController: ToastController) {
 
     }
 
@@ -106,9 +106,33 @@ export class CreateBankCardPage {
             }
         }
 
+        if (this.step == 2) {
+            if (!this.icCardNumber) {
+                this.showAlert({message: "请读取银行卡信息"});
+                return;
+            }
+        }
+
+        // if (this.step == 4) {
+        //
+        //     for (let i = 0, n = this.enclosures.length; i < n; i++) {
+        //
+        //         if (!this.enclosures[i]) {
+        //             this.showAlert({message: "请上传完整的附件信息"});
+        //             return;
+        //         }
+        //     }
+        //
+        // }
+
+
         if (this.step < 5) {
             this.step++;
+        } else {
+            this.submit();
         }
+
+
     }
 
     cameraPhoto(index: number) {
@@ -124,6 +148,46 @@ export class CreateBankCardPage {
     }
 
     viewPhoto(index: number) {
+
+    }
+
+    submit() {
+        let confirm = this.alertController.create({
+            title: '借记卡开卡申请',
+            message: '您确定输入的信息无误，要提交借记卡开卡申请?',
+            buttons: [
+                {
+                    text: '取消',
+                    handler: () => {
+                    }
+                },
+                {
+                    text: '确定',
+                    handler: () => {
+                        let loader = this.loadingController.create({
+                            content: "正在提价申请..."
+                        });
+                        loader.present();
+                        setTimeout(()=> {
+                            let toast = this.toastController.create({
+                                message: '您已成功提交了借记卡开卡申请，我们会尽快为您处理。',
+                                duration: 3000
+                            });
+
+                            loader.dismiss()
+                                .then(()=> {
+                                    toast.present().then(()=> {
+                                        this.navCtrl.pop();
+                                    });
+                                });
+                        }, 1500);
+
+                    }
+                }
+            ]
+        });
+        confirm.present();
+
 
     }
 }
