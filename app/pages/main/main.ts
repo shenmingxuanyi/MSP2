@@ -3,6 +3,7 @@ import {NavController, MenuController, ViewController} from 'ionic-angular';
 import {Observable} from "rxjs/Rx";
 import {ChoiceBankCardPage} from "../bank-card/choice-bank-card/choice-bank-card";
 import {I18NService} from "../../providers/i18n-service/i18n-service";
+import {NotificationsPage} from "../notifications/notifications";
 
 /*
  Generated class for the MainPage page.
@@ -62,6 +63,14 @@ export class MainPage implements OnInit {
 
     createBankCard() {
         this.nav.push(ChoiceBankCardPage);
+    }
+
+    notification() {
+        this.nav.push(NotificationsPage);
+    }
+
+    qrScanner() {
+
     }
 
 

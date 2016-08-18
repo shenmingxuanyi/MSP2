@@ -4,6 +4,7 @@ import {I18NService} from "../../../providers/i18n-service/i18n-service";
 import {IDCard} from "../../../models/business/IDCard";
 import {IDCardService} from "../../../providers/id-card-service/id-card-service";
 import {ICCardService} from "../../../providers/ic-card-service/ic-card-service";
+import {Camera} from "ionic-native";
 
 /*
  Generated class for the CreateBankCardPage page.
@@ -110,13 +111,19 @@ export class CreateBankCardPage {
         }
     }
 
-    cameraPhoto(path) {
-        console.log("path" + path);
-        path = "images/user.png";
+    cameraPhoto(index: number) {
+        Camera.getPicture({}).then((imageData) => {
+            this.enclosures[index] = imageData;
+            let base64Image = 'data:image/jpeg;base64,' + imageData;
+        }, (err) => {
+        });
     }
 
-    deletePhoto(path) {
-        console.log("path" + path);
-        path = null;
+    deletePhoto(index: number) {
+        this.enclosures[index] = null;
+    }
+
+    viewPhoto(index: number) {
+
     }
 }
