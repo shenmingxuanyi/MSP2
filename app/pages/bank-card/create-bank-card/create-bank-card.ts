@@ -113,17 +113,17 @@ export class CreateBankCardPage {
             }
         }
 
-        // if (this.step == 4) {
-        //
-        //     for (let i = 0, n = this.enclosures.length; i < n; i++) {
-        //
-        //         if (!this.enclosures[i]) {
-        //             this.showAlert({message: "请上传完整的附件信息"});
-        //             return;
-        //         }
-        //     }
-        //
-        // }
+        if (this.step == 4) {
+
+            for (let i = 0, n = this.enclosures.length; i < n; i++) {
+
+                if (!this.enclosures[i]) {
+                    this.showAlert({message: "请上传完整的附件信息"});
+                    return;
+                }
+            }
+
+        }
 
 
         if (this.step < 5) {

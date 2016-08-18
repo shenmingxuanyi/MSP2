@@ -284,7 +284,7 @@
                                         <ion-col>
                                             <ion-item>
                                                 <ion-label dark>移动电话：</ion-label>
-                                                <ion-input type="text" clearInput [(ngModel)]="shoujihaoma"
+                                                <ion-input type="number" clearInput [(ngModel)]="shoujihaoma"
                                                            placeholder="请输入手机号码"></ion-input>
                                             </ion-item>
                                         </ion-col>
@@ -303,7 +303,7 @@
                                         <ion-col>
                                             <ion-item>
                                                 <ion-label dark>邮政编码：</ion-label>
-                                                <ion-input type="text" clearInput [(ngModel)]="youzhengbianma"
+                                                <ion-input type="number" clearInput [(ngModel)]="youzhengbianma"
                                                            placeholder="请输入邮政编码"></ion-input>
                                             </ion-item>
                                         </ion-col>
@@ -335,14 +335,17 @@
                                         <ion-col>
                                             <ion-item>
                                                 <ion-label dark>行业：</ion-label>
-                                                <ion-select [(ngModel)]="hangye">
+                                                <ion-select [(ngModel)]="hangye"
+                                                            okText="确定"
+                                                            cancelText="取消"
+                                                            interface="action-sheet">
                                                     <ion-option value="金融业">金融业</ion-option>
                                                     <ion-option value="农林牧渔">农林牧渔</ion-option>
-                                                    <ion-option value="采矿业 ">采矿业  </ion-option>
+                                                    <ion-option value="采矿业 ">采矿业</ion-option>
                                                     <ion-option value="制造业">制造业</ion-option>
                                                     <ion-option value="水电气供应">水电气供应</ion-option>
                                                     <ion-option value="建筑业">建筑业</ion-option>
-                                                    <ion-option value="交通运输 ">交通运输 </ion-option>
+                                                    <ion-option value="交通运输 ">交通运输</ion-option>
                                                     <ion-option value="计算机">计算机</ion-option>
                                                     <ion-option value="批发零售">批发零售</ion-option>
                                                     <ion-option value="酒店餐饮">酒店餐饮</ion-option>
@@ -365,15 +368,20 @@
                                         <ion-col>
                                             <ion-item>
                                                 <ion-label dark>职业：</ion-label>
-                                                <ion-select [(ngModel)]="zhiye">
-                                                    <ion-option value="国家机关、党群组织、企事业单位负责人">国家机关、党群组织、企事业单位负责人</ion-option>
+                                                <ion-select [(ngModel)]="zhiye"
+                                                            okText="确定"
+                                                            cancelText="取消"
+                                                            interface="action-sheet">
+                                                    <ion-option value="国家机关、党群组织、企事业单位负责人">国家机关、党群组织、企事业单位负责人
+                                                    </ion-option>
                                                     <ion-option value="专业技术人员">专业技术人员</ion-option>
                                                     <ion-option value="办事人员和有关人员">办事人员和有关人员</ion-option>
                                                     <ion-option value="商业、服务业人员">商业、服务业人员</ion-option>
-                                                    <ion-option value="农、林、牧、渔、水利业生产人员 ">农、林、牧、渔、水利业生产人员 </ion-option>
-                                                    <ion-option value=" 生产、运输设备操作人员及有关人员 "> 生产、运输设备操作人员及有关人员  </ion-option>
+                                                    <ion-option value="农、林、牧、渔、水利业生产人员 ">农、林、牧、渔、水利业生产人员</ion-option>
+                                                    <ion-option value=" 生产、运输设备操作人员及有关人员 "> 生产、运输设备操作人员及有关人员
+                                                    </ion-option>
                                                     <ion-option value="军人">军人</ion-option>
-                                                    <ion-option value="不便分类的其他从业人员 ">不便分类的其他从业人员 </ion-option>
+                                                    <ion-option value="不便分类的其他从业人员 ">不便分类的其他从业人员</ion-option>
                                                     <ion-option value=" 无职"> 无职</ion-option>
                                                 </ion-select>
                                             </ion-item>
@@ -450,7 +458,7 @@
                                 <ion-list>
                                     <ion-item>
                                         <ion-label fixed>手机号码</ion-label>
-                                        <ion-input [(ngModel)]="yxt_sjhm" type="text" value="" clearInput
+                                        <ion-input [(ngModel)]="yxt_sjhm" type="number" value="" clearInput
                                                    placeholder="请输入手机号码"></ion-input>
                                     </ion-item>
                                 </ion-list>
@@ -471,21 +479,21 @@
                                         <ion-col>
                                             <ion-item>
                                                 <ion-label fixed dark>手机号码</ion-label>
-                                                <ion-input clearInput type="text" [(ngModel)]="zbf_sjhm"
+                                                <ion-input clearInput type="number" [(ngModel)]="zbf_sjhm"
                                                            placeholder="请输入手机号码"></ion-input>
                                             </ion-item>
                                         </ion-col>
                                         <ion-col>
                                             <ion-item>
                                                 <ion-label fixed dark>支付限额</ion-label>
-                                                <ion-input clearInput type="text" [(ngModel)]="zfb_zfxe"
+                                                <ion-input clearInput type="number" [(ngModel)]="zfb_zfxe"
                                                            placeholder="请输入支付限额"></ion-input>
                                             </ion-item>
                                         </ion-col>
                                         <ion-col>
                                             <ion-item>
                                                 <ion-label fixed dark>提现限额</ion-label>
-                                                <ion-input clearInput type="text" [(ngModel)]="zbf_txxe"
+                                                <ion-input clearInput type="number" [(ngModel)]="zbf_txxe"
                                                            placeholder="请输入提现限额"></ion-input>
                                             </ion-item>
                                         </ion-col>
@@ -549,7 +557,7 @@
                                     <ion-item>
 
                                         <ion-label fixed dark>支付限额</ion-label>
-                                        <ion-input type="text" [(ngModel)]="yhzf_zbxe" clearInput
+                                        <ion-input type="number" [(ngModel)]="yhzf_zbxe" clearInput
                                                    placeholder="请输入支付限额"></ion-input>
 
                                     </ion-item>
