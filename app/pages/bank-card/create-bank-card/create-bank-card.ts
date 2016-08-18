@@ -5,6 +5,7 @@ import {IDCard} from "../../../models/business/IDCard";
 import {IDCardService} from "../../../providers/id-card-service/id-card-service";
 import {ICCardService} from "../../../providers/ic-card-service/ic-card-service";
 import {Camera} from "ionic-native";
+import {SpacePipe} from "../../../pipes/spacePipe";
 
 /*
  Generated class for the CreateBankCardPage page.
@@ -14,7 +15,8 @@ import {Camera} from "ionic-native";
  */
 @Component({
     templateUrl: 'build/pages/bank-card/create-bank-card/create-bank-card.html',
-    providers: [IDCardService, ICCardService]
+    providers: [IDCardService, ICCardService],
+    pipes: [SpacePipe]
 })
 export class CreateBankCardPage {
 

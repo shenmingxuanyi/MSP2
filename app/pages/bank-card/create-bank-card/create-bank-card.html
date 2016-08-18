@@ -408,7 +408,7 @@
                             <ion-icon name="card" style="font-size: 8vw;"></ion-icon>
                         </button>
                         <p text-center>点击读取银行卡</p>
-                        <h1 *ngIf="icCardNumber">{{icCardNumber}}</h1>
+                        <h1 *ngIf="icCardNumber">{{icCardNumber|spacePipe}}</h1>
                     </ion-col>
                 </ion-row>
 
@@ -938,8 +938,7 @@
                                         <ion-col>
 
                                             <ion-item>
-                                                <ion-label dark>银行卡号：{{icCardNumber}}</ion-label>
-                                                {{icCardNumber}}
+                                                <ion-label dark>银行卡号：{{icCardNumber|spacePipe}}</ion-label>
                                             </ion-item>
                                         </ion-col>
 
