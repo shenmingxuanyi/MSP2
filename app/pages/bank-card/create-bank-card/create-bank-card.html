@@ -39,6 +39,7 @@
 <ion-content light-bg>
 
     <div [ngSwitch]="step">
+
         <div padding *ngSwitchCase="0">
 
             <ion-grid>
@@ -258,78 +259,112 @@
             </ion-grid>
 
         </div>
+
         <div *ngSwitchCase="1">
 
             <ion-grid responsive-lg>
                 <ion-row>
                     <ion-col width-80 offset-10>
                         <ion-card>
-                            <ion-card-header>
+
+                            <ion-card-header style="background-color: #fafafa;">
                                 <h2>信息录入</h2>
                             </ion-card-header>
-                            <ion-list>
 
-                                <ion-item>
-                                    <ion-label dark>是否已婚：</ion-label>
-                                    <ion-toggle checked="false"></ion-toggle>
-                                </ion-item>
+                            <ion-card-content>
+                                <ion-list>
 
-                                <ion-item>
-                                    <ion-label dark>移动电话：</ion-label>
-                                    <ion-input type="text" clearInput
-                                               placeholder="请输入手机号码"></ion-input>
-                                </ion-item>
-
-                                <ion-item>
-                                    <ion-label dark>家庭住址：</ion-label>
-                                    <ion-input type="text" clearInput
-                                               placeholder="请输入家庭住址"></ion-input>
-                                </ion-item>
-
-                                <ion-item>
-                                    <ion-label dark>邮政编码：</ion-label>
-                                    <ion-input type="text" clearInput
-                                               placeholder="请输入邮政编码"></ion-input>
-                                </ion-item>
-
-                                <ion-item>
-                                    <ion-label dark>工作单位：</ion-label>
-                                    <ion-input type="text" clearInput
-                                               placeholder="请输入工作单位"></ion-input>
-                                </ion-item>
-
-                                <ion-item>
-                                    <ion-label dark>工作地址：</ion-label>
-                                    <ion-input type="text" clearInput
-                                               placeholder="请输入工作地址"></ion-input>
-                                </ion-item>
-
-                                <ion-item>
-                                    <ion-label dark>行业：</ion-label>
-                                    <ion-select>
-                                        <ion-option value="nes">NES</ion-option>
-                                        <ion-option value="n64">Nintendo64</ion-option>
-                                        <ion-option value="ps">PlayStation</ion-option>
-                                        <ion-option value="genesis">Sega Genesis</ion-option>
-                                        <ion-option value="saturn">Sega Saturn</ion-option>
-                                        <ion-option value="snes">SNES</ion-option>
-                                    </ion-select>
-                                </ion-item>
-
-                                <ion-item>
-                                    <ion-label dark>职业：</ion-label>
-                                    <ion-select>
-                                        <ion-option value="nes">NES</ion-option>
-                                        <ion-option value="n64">Nintendo64</ion-option>
-                                        <ion-option value="ps">PlayStation</ion-option>
-                                        <ion-option value="genesis">Sega Genesis</ion-option>
-                                        <ion-option value="saturn">Sega Saturn</ion-option>
-                                        <ion-option value="snes">SNES</ion-option>
-                                    </ion-select>
-                                </ion-item>
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>是否已婚：</ion-label>
+                                                <ion-toggle [(ngModel)]="shifouyihun" checked="false"></ion-toggle>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>移动电话：</ion-label>
+                                                <ion-input type="text" clearInput [(ngModel)]="shoujihaoma"
+                                                           placeholder="请输入手机号码"></ion-input>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
 
 
-                            </ion-list>
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>家庭住址：</ion-label>
+                                                <ion-input type="text" clearInput [(ngModel)]="jiatingzhuzhi"
+                                                           placeholder="请输入家庭住址"></ion-input>
+                                            </ion-item>
+                                        </ion-col>
+
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>邮政编码：</ion-label>
+                                                <ion-input type="text" clearInput [(ngModel)]="youzhengbianma"
+                                                           placeholder="请输入邮政编码"></ion-input>
+                                            </ion-item>
+                                        </ion-col>
+
+                                    </ion-row>
+
+
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>工作单位：</ion-label>
+                                                <ion-input type="text" clearInput [(ngModel)]="gongzuodanwei"
+                                                           placeholder="请输入工作单位"></ion-input>
+                                            </ion-item>
+                                        </ion-col>
+
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>工作地址：</ion-label>
+                                                <ion-input type="text" clearInput [(ngModel)]="gongzuodizhi"
+                                                           placeholder="请输入工作地址"></ion-input>
+                                            </ion-item>
+                                        </ion-col>
+
+                                    </ion-row>
+
+
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>行业：</ion-label>
+                                                <ion-select [(ngModel)]="hangye">
+                                                    <ion-option value="nes">NES</ion-option>
+                                                    <ion-option value="n64">Nintendo64</ion-option>
+                                                    <ion-option value="ps">PlayStation</ion-option>
+                                                    <ion-option value="genesis">Sega Genesis</ion-option>
+                                                    <ion-option value="saturn">Sega Saturn</ion-option>
+                                                    <ion-option value="snes">SNES</ion-option>
+                                                </ion-select>
+                                            </ion-item>
+                                        </ion-col>
+
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>职业：</ion-label>
+                                                <ion-select [(ngModel)]="zhiye">
+                                                    <ion-option value="nes">NES</ion-option>
+                                                    <ion-option value="n64">Nintendo64</ion-option>
+                                                    <ion-option value="ps">PlayStation</ion-option>
+                                                    <ion-option value="genesis">Sega Genesis</ion-option>
+                                                    <ion-option value="saturn">Sega Saturn</ion-option>
+                                                    <ion-option value="snes">SNES</ion-option>
+                                                </ion-select>
+                                            </ion-item>
+                                        </ion-col>
+
+                                    </ion-row>
+
+
+                                </ion-list>
+                            </ion-card-content>
                         </ion-card>
                     </ion-col>
                 </ion-row>
@@ -353,24 +388,26 @@
                 <ion-row>
                     <ion-col width-80 offset-10>
                         <ion-card>
-                            <ion-card-header>
+                            <ion-card-header style="background-color: #fafafa;">
                                 <h2>设置密码</h2>
                             </ion-card-header>
-                            <ion-list>
+                            <ion-card-content>
+                                <ion-list>
 
-                                <ion-item>
-                                    <ion-label dark>输入密码：</ion-label>
-                                    <ion-input type="password" clearInput
-                                               placeholder="请输入6位数字"></ion-input>
-                                </ion-item>
+                                    <ion-item>
+                                        <ion-label dark>输入密码：</ion-label>
+                                        <ion-input type="password" clearInput
+                                                   placeholder="请输入6位数字"></ion-input>
+                                    </ion-item>
 
-                                <ion-item>
-                                    <ion-label dark>确认密码：</ion-label>
-                                    <ion-input type="password" clearInput
-                                               placeholder="请输入6位数字"></ion-input>
-                                </ion-item>
+                                    <ion-item>
+                                        <ion-label dark>确认密码：</ion-label>
+                                        <ion-input type="password" clearInput
+                                                   placeholder="请输入6位数字"></ion-input>
+                                    </ion-item>
 
-                            </ion-list>
+                                </ion-list>
+                            </ion-card-content>
                         </ion-card>
                     </ion-col>
                 </ion-row>
@@ -409,18 +446,31 @@
                             </ion-card-header>
                             <ion-card-content [hidden]="!zfb">
                                 <ion-list>
-                                    <ion-item>
-                                        <ion-label fixed>手机号码</ion-label>
-                                        <ion-input clearInput type="text" value="" placeholder="请输入手机号码"></ion-input>
-                                    </ion-item>
-                                    <ion-item>
-                                        <ion-label fixed>支付限额</ion-label>
-                                        <ion-input clearInput type="text" value="" placeholder="请输入支付限额"></ion-input>
-                                    </ion-item>
-                                    <ion-item>
-                                        <ion-label fixed>提现限额</ion-label>
-                                        <ion-input clearInput type="text" value="" placeholder="请输入提现限额"></ion-input>
-                                    </ion-item>
+
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label fixed>手机号码</ion-label>
+                                                <ion-input clearInput type="text" value=""
+                                                           placeholder="请输入手机号码"></ion-input>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label fixed>支付限额</ion-label>
+                                                <ion-input clearInput type="text" value=""
+                                                           placeholder="请输入支付限额"></ion-input>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label fixed>提现限额</ion-label>
+                                                <ion-input clearInput type="text" value=""
+                                                           placeholder="请输入提现限额"></ion-input>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
+
                                 </ion-list>
                             </ion-card-content>
                         </ion-card>
@@ -435,22 +485,33 @@
                             <ion-card-content [hidden]="!wsyh">
                                 <ion-list radio-group>
 
-                                    <ion-item>
-                                        <ion-label>普通版</ion-label>
-                                        <ion-radio value="golang" checked="true"></ion-radio>
-                                    </ion-item>
-                                    <ion-item>
-                                        <ion-label>短信版</ion-label>
-                                        <ion-radio value="rust"></ion-radio>
-                                    </ion-item>
-                                    <ion-item>
-                                        <ion-label>动态口令版</ion-label>
-                                        <ion-radio value="python"></ion-radio>
-                                    </ion-item>
-                                    <ion-item>
-                                        <ion-label>安全证书版</ion-label>
-                                        <ion-radio value="ruby"></ion-radio>
-                                    </ion-item>
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-item no-lines>
+                                                <ion-label>普通版</ion-label>
+                                                <ion-radio item-left value="golang" checked="true"></ion-radio>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col>
+                                            <ion-item no-lines>
+                                                <ion-label>短信版</ion-label>
+                                                <ion-radio item-left value="rust"></ion-radio>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col>
+                                            <ion-item no-lines>
+                                                <ion-label>动态口令版</ion-label>
+                                                <ion-radio item-left value="python"></ion-radio>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col>
+                                            <ion-item no-lines>
+                                                <ion-label>安全证书版</ion-label>
+                                                <ion-radio item-left value="ruby"></ion-radio>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
+
                                 </ion-list>
                             </ion-card-content>
                         </ion-card>
@@ -499,7 +560,6 @@
                     </ion-col>
                 </ion-row>
             </ion-grid>
-
 
         </div>
         <div *ngSwitchCase="4">
@@ -621,8 +681,244 @@
             </ion-grid>
 
         </div>
+
         <div *ngSwitchCase="5">
-            5
+
+            <ion-grid responsive-lg>
+                <ion-row>
+                    <ion-col width-80 offset-10>
+                        <ion-card>
+                            <ion-card-header style="background-color: #fafafa;">
+                                <h2>身份信息</h2>
+                            </ion-card-header>
+                            <ion-card-content>
+                                <ion-list>
+
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>
+                                                    姓名：{{originalIDCard?.name}}
+                                                </ion-label>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>
+                                                    性别：{{originalIDCard?.gender}}
+                                                </ion-label>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
+
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>
+                                                    民族：{{originalIDCard?.nation}}
+                                                </ion-label>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>
+                                                    出生：<span style="margin: 0 1rem;">
+                                                            {{originalIDCard?.birthday|slice:0:4}}
+                                                            <span style="color: #448FB9;">&nbsp;&nbsp;年&nbsp;&nbsp;</span>
+                                                            {{originalIDCard?.birthday|slice:4:6}}
+                                                            <span style="color: #448FB9;">&nbsp;&nbsp;月&nbsp;&nbsp;</span>
+                                                            {{originalIDCard?.birthday|slice:6:8}}
+                                                            <span style="color: #448FB9;">&nbsp;&nbsp;日&nbsp;&nbsp;</span>
+                                                        </span>
+                                                </ion-label>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
+
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>
+                                                    地址：{{originalIDCard?.address}}
+                                                </ion-label>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
+
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>
+                                                    发证机关：{{originalIDCard?.registInstitution}}
+                                                </ion-label>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>
+                                                    有效期限：<span *ngIf="originalIDCard?.validStartDate">
+                                                        {{originalIDCard?.validStartDate|slice:0:4}}.
+                                                        {{originalIDCard?.validStartDate|slice:4:6}}.
+                                                        {{originalIDCard?.validStartDate|slice:6:8}}
+                                                        —
+                                                    </span>
+                                                    <span *ngIf="originalIDCard?.validEndDate">
+                                                        —
+                                                        {{originalIDCard?.validEndDate|slice:0:4}}.
+                                                        {{originalIDCard?.validEndDate|slice:4:6}}.
+                                                        {{originalIDCard?.validEndDate|slice:6:8}}
+                                                    </span>
+                                                </ion-label>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
+
+                                    <ion-row>
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>
+                                                    公民身份证号：{{originalIDCard?.cardNum}}
+                                                </ion-label>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
+
+
+                                </ion-list>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-grid responsive-lg>
+                <ion-row>
+                    <ion-col width-80 offset-10>
+                        <ion-card>
+                            <ion-card-header style="background-color: #fafafa;">
+                                <h2>基本信息</h2>
+                            </ion-card-header>
+                            <ion-card-content>
+                                <ion-list>
+
+                                    <ion-item>
+                                        <ion-label dark>已婚状况：{{!!shifouyihun?'已婚':'未婚'}}</ion-label>
+                                    </ion-item>
+
+                                    <ion-item>
+                                        <ion-label dark>移动电话：{{shoujihaoma}}</ion-label>
+                                    </ion-item>
+
+                                    <ion-item>
+                                        <ion-label dark>家庭住址：{{jiatingzhuzhi}}</ion-label>
+                                    </ion-item>
+
+                                    <ion-item>
+                                        <ion-label dark>邮政编码：{{youzhengbianma}}</ion-label>
+                                    </ion-item>
+
+                                    <ion-item>
+                                        <ion-label dark>工作单位：{{gongzuodanwei}}</ion-label>
+                                    </ion-item>
+
+                                    <ion-item>
+                                        <ion-label dark>工作地址：{{gongzuodizhi}}</ion-label>
+                                    </ion-item>
+
+                                    <ion-item>
+                                        <ion-label dark>行业：{{hangye}}</ion-label>
+                                    </ion-item>
+
+                                    <ion-item>
+                                        <ion-label dark>职业：{{zhiye}}</ion-label>
+                                    </ion-item>
+
+                                </ion-list>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-grid responsive-lg>
+                <ion-row>
+                    <ion-col width-80 offset-10>
+                        <ion-card>
+                            <ion-card-header style="background-color: #fafafa;">
+                                附件信息
+                            </ion-card-header>
+                            <ion-card-content>
+                                <ion-row>
+                                    <ion-col>
+                                        <img [hidden]="!enclosures[2]" [src]="enclosures[0]">
+                                        <p text-center>身份证正面</p>
+                                    </ion-col>
+                                    <ion-col>
+                                        <img [hidden]="!enclosures[2]" [src]="enclosures[1]">
+                                        <p text-center>身份证反面</p>
+                                    </ion-col>
+                                    <ion-col>
+                                        <img [hidden]="!enclosures[2]" [src]="enclosures[2]">
+                                        <p text-center>办理人与客户经理及借记卡合影</p>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-grid responsive-lg>
+                <ion-row>
+                    <ion-col width-80 offset-10>
+                        <ion-card>
+                            <ion-card-header style="background-color: #fafafa;">
+                                <h2>银行卡信息</h2>
+                            </ion-card-header>
+                            <ion-card-content>
+                                <ion-list>
+                                    <ion-row>
+
+                                        <ion-col>
+                                            <ion-item>
+                                                <ion-label dark>银行类型：借记卡</ion-label>
+
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col>
+
+                                            <ion-item>
+                                                <ion-label dark>银行卡号：{{icCardNumber}}</ion-label>
+                                                {{icCardNumber}}
+                                            </ion-item>
+                                        </ion-col>
+
+                                    </ion-row>
+
+                                </ion-list>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-grid responsive-lg>
+                <ion-row>
+                    <ion-col width-80 offset-10>
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-item>
+                                    <ion-label>同意并阅读<a href="http://www.baidu.com">《XXXX协议》</a>和<a
+                                            href="http://www.baidu.com">《XXXX协议》</a>。
+                                    </ion-label>
+                                    <ion-toggle item-left checked="false"></ion-toggle>
+                                </ion-item>
+                            </ion-card-header>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
         </div>
 
     </div>
