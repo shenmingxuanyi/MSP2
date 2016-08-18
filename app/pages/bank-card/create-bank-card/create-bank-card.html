@@ -510,7 +510,7 @@
 
                         <ion-card>
 
-                            <img src="images/business/background/originalImage.png"/>
+                            <img [src]="enclosures[0]||'images/business/background/originalImage.png'"/>
 
                             <ion-card-content>
                                 <h2 class="card-title">
@@ -520,14 +520,14 @@
 
                             <ion-row no-padding>
                                 <ion-col>
-                                    <button clear large primary>
+                                    <button clear large primary (click)="cameraPhoto(enclosures[0])">
                                         <ion-icon name='camera'></ion-icon>
                                         拍照
                                     </button>
                                 </ion-col>
                                 <ion-col text-center>
                                     <button clear large danger>
-                                        <ion-icon name='trash'></ion-icon>
+                                        <ion-icon name='trash' (click)="deletePhoto(enclosures[0])"></ion-icon>
                                         删除
                                     </button>
                                 </ion-col>
@@ -546,7 +546,7 @@
 
                         <ion-card>
 
-                            <img src="images/business/background/originalImage.png"/>
+                            <img [src]="enclosures[1]||'images/business/background/originalImage.png'"/>
 
                             <ion-card-content>
                                 <h2 class="card-title">
@@ -556,14 +556,14 @@
 
                             <ion-row no-padding>
                                 <ion-col>
-                                    <button clear large primary>
+                                    <button clear large primary (click)="cameraPhoto(enclosures[0])">
                                         <ion-icon name='camera'></ion-icon>
                                         拍照
                                     </button>
                                 </ion-col>
                                 <ion-col text-center>
                                     <button clear large danger>
-                                        <ion-icon name='trash'></ion-icon>
+                                        <ion-icon name='trash' (click)="deletePhoto(enclosures[0])"></ion-icon>
                                         删除
                                     </button>
                                 </ion-col>
@@ -582,7 +582,7 @@
 
                         <ion-card>
 
-                            <img src="images/business/background/originalImage.png"/>
+                            <img [src]="enclosures[2]||'images/business/background/originalImage.png'"/>
 
                             <ion-card-content>
                                 <h2 class="card-title">
@@ -592,14 +592,14 @@
 
                             <ion-row no-padding>
                                 <ion-col>
-                                    <button clear large primary>
+                                    <button clear large primary (click)="cameraPhoto(enclosures[0])">
                                         <ion-icon name='camera'></ion-icon>
                                         拍照
                                     </button>
                                 </ion-col>
                                 <ion-col text-center>
                                     <button clear large danger>
-                                        <ion-icon name='trash'></ion-icon>
+                                        <ion-icon name='trash' (click)="deletePhoto(enclosures[0])"></ion-icon>
                                         删除
                                     </button>
                                 </ion-col>

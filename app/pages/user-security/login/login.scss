@@ -1,6 +1,5 @@
 .login {
 
-
   background-color: #4CAEDD;
 
   background-image: url("../../images/system/yun-01.png"), -webkit-linear-gradient(0deg, #4CAEDD, #88dff7, #4CAEDD);
@@ -18,44 +17,45 @@
   background-attachment: fixed;
 
   .yun-01 {
-    -moz-animation: yun-left2Right ease-out 30000ms infinite;
-    -webkit-animation: yun-left2Right ease-out 30000ms infinite;
-    -o-animation: yun-left2Right ease-out 30000ms infinite;
-    animation: yun-left2Right ease-out 30000ms infinite;
+    -moz-animation: yun-left2Right 350000ms ease-out -10000ms infinite;
+    -webkit-animation: yun-left2Right 250000ms ease-out -10000ms infinite;
+    -o-animation: yun-left2Right 350000ms ease-out -10000ms infinite;
+    animation: yun-left2Right 350000ms ease-out -10000ms infinite;
   }
 
   .yun-02 {
-    -moz-animation: yun-left2Right ease-out 40000ms infinite;
-    -webkit-animation: yun-left2Right ease-out 40000ms infinite;
-    -o-animation: yun-left2Right ease-out 40000ms infinite;
-    animation: yun-left2Right ease-out 40000ms infinite;
+    -moz-animation: yun-left2Right 500000ms ease-out -50000ms infinite;
+    -webkit-animation: yun-left2Right 500000ms ease-out -50000ms infinite;
+    -o-animation: yun-left2Right 500000ms ease-out -50000ms infinite;
+    animation: yun-left2Right 500000ms ease-out -50000ms infinite;
   }
 
   .yun-03 {
-    -webkit-animation: yun-left2Right ease-out 25000ms infinite;
-    -o-animation: yun-left2Right ease-out 25000ms infinite;
-    animation: yun-left2Right ease-out 25000ms infinite;
+    -moz-animation: yun-left2Right 150000ms ease-out -60000ms infinite;
+    -webkit-animation: yun-left2Right 150000ms ease-out -60000ms infinite;
+    -o-animation: yun-left2Right 150000ms ease-out -60000ms infinite;
+    animation: yun-left2Right 150000ms ease-out -60000ms infinite;
   }
 
   .yun-04 {
-    -moz-animation: yun-left2Right ease-out 50000ms infinite;
-    -webkit-animation: yun-left2Right ease-out 50000ms infinite;
-    -o-animation: yun-left2Right ease-out 50000ms infinite;
-    animation: yun-left2Right ease-out 50000ms infinite;
+    -moz-animation: yun-left2Right 200000ms ease-out -48000ms infinite;
+    -webkit-animation: yun-left2Right 200000ms ease-out -48000ms infinite;
+    -o-animation: yun-left2Right 200000ms ease-out -48000ms infinite;
+    animation: yun-left2Right 200000ms ease-out -48000ms infinite;
   }
 
   .yun-05 {
-    -moz-animation: yun-left2Right ease-out 100000ms infinite;
-    -webkit-animation: yun-left2Right ease-out 100000ms infinite;
-    -o-animation: yun-left2Right ease-out 100000ms infinite;
-    animation: yun-left2Right ease-out 100000ms infinite;
+    -moz-animation: yun-left2Right 130000ms ease-out -40000ms infinite;
+    -webkit-animation: yun-left2Right 130000ms ease-out -40000ms infinite;
+    -o-animation: yun-left2Right 130000ms ease-out -40000ms infinite;
+    animation: yun-left2Right 130000ms ease-out -40000ms infinite;
   }
 
   .yun-06 {
-    -moz-animation: yun-left2Right ease-out 120000ms infinite;
-    -webkit-animation: yun-left2Right ease-out 120000ms infinite;
-    -o-animation: yun-left2Right ease-out 120000ms infinite;
-    animation: yun-left2Right ease-out 120000ms infinite;
+    -moz-animation: yun-left2Right 180000ms ease-out -30000ms infinite;
+    -webkit-animation: yun-left2Right 180000ms ease-out -30000ms infinite;
+    -o-animation: yun-left2Right 180000ms ease-out -30000ms infinite;
+    animation: yun-left2Right 180000ms ease-out -30000ms infinite;
   }
 
 }

@@ -25,6 +25,8 @@ export class CreateBankCardPage {
 
     step: number;
 
+    enclosures: Array<string> = [null, null, null];
+
     constructor(private navCtrl: NavController, public i18NService: I18NService, public idCardService: IDCardService, public loadingController: LoadingController, public alertController: AlertController, public icCardService: ICCardService) {
 
     }
@@ -73,7 +75,7 @@ export class CreateBankCardPage {
         let loader = this.loadingController.create({
             content: "正在读取银行卡..."
         });
-        
+
         loader.present();
 
         this.icCardService
@@ -106,5 +108,15 @@ export class CreateBankCardPage {
         if (this.step < 5) {
             this.step++;
         }
+    }
+
+    cameraPhoto(path) {
+        console.log("path" + path);
+        path = "images/user.png";
+    }
+
+    deletePhoto(path) {
+        console.log("path" + path);
+        path = null;
     }
 }
