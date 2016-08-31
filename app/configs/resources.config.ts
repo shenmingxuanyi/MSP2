@@ -2,7 +2,8 @@
  * Created by Z.JM on 2016/8/11.
  */
 export const RESTFUL_RESOURCE_END_POINT = {
-    SERVICE: "https://raw.githubusercontent.com/shenmingxuanyi/restfulapi/master/msp2",
+    // SERVICE: "https://raw.githubusercontent.com/shenmingxuanyi/restfulapi/master/msp2",
+    SERVICE: "",
     STATIC: "https://raw.githubusercontent.com/shenmingxuanyi/restfulapi/master/msp2"
 };
 

@@ -29,6 +29,7 @@ export class CreateBankCardPage {
     step: number;
 
     enclosures: Array<string> = [null, null, null];
+    enclosureProcesses: Array<number> = [0, 0, 0];
 
     constructor(private navCtrl: NavController, public i18NService: I18NService, public idCardService: IDCardService, public loadingController: LoadingController, public alertController: AlertController, public icCardService: ICCardService, private toastController: ToastController) {
 
@@ -140,7 +141,7 @@ export class CreateBankCardPage {
     cameraPhoto(index: number) {
         Camera.getPicture({}).then((imageData) => {
             this.enclosures[index] = imageData;
-            let base64Image = 'data:image/jpeg;base64,' + imageData;
+            this.upload(index);
         }, (err) => {
         });
     }
@@ -190,6 +191,16 @@ export class CreateBankCardPage {
         });
         confirm.present();
 
+    }
 
+    upload(index: number) {
+        this.enclosureProcesses[index] = 0;
+        let uploadInterval = setInterval(()=> {
+            if (this.enclosureProcesses[index] < 100) {
+                ++this.enclosureProcesses[index];
+            } else {
+                clearInterval(uploadInterval);
+            }
+        }, 100)
     }
 }

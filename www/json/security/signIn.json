@@ -1,0 +1,31 @@
+{
+  "code": "00",
+  "message": "SUCCESS",
+  "context": {
+    "sysUserInfo": {
+      "oid": "BC727136-DC5A-4020-BCDF-D0236BA1A83",
+      "userAccount": "15311621031",
+      "userPassword": "",
+      "status": "VALID",
+      "point": 0,
+      "bgTime": 0,
+      "loginErrorTimes": 0,
+      "lastLoginDate": "2015-12-01 19:10:52",
+      "loginTotalTimes": 385,
+      "openDate": "2015-11-27 03:18:29",
+      "closeDate": "2015-11-27 03:18:29",
+      "eBankTrsPassword": "",
+      "cellPhone": "18701024476",
+      "nikeName": "18701024476",
+      "allowLevel": "anyone",
+      "errorEPwdNum": 0,
+      "lastErrorEPwdTime": "2015-11-27 03:18:29",
+      "userLevel": "AuthenUser",
+      "operatorTime": "2015-11-27 03:18:29",
+      "lastModifyOperatorTime": "2015-11-27 03:18:29",
+      "aInt": 0
+    },
+    "tokenId": "C1C5BD0C-633E-46CD-8CB4-87D8F5C95284"
+  },
+  "errorList": ""
+}

@@ -4,6 +4,7 @@ import {Observable} from "rxjs/Rx";
 import {ChoiceBankCardPage} from "../bank-card/choice-bank-card/choice-bank-card";
 import {I18NService} from "../../providers/i18n-service/i18n-service";
 import {NotificationsPage} from "../notifications/notifications";
+import {SignaturePadPage} from "../commons/signature-pad/signature-pad";
 
 /*
  Generated class for the MainPage page.
@@ -63,6 +64,10 @@ export class MainPage implements OnInit {
 
     createBankCard() {
         this.nav.push(ChoiceBankCardPage);
+    }
+
+    signaturePad() {
+        this.nav.push(SignaturePadPage);
     }
 
     notification() {

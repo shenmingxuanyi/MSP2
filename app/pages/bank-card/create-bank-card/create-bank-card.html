@@ -598,10 +598,14 @@
                     <ion-col width-33>
 
                         <ion-card>
-
-                            <img (click)="viewPhoto(0)"
-                                 [src]="enclosures[0]||'images/business/background/originalImage.png'"/>
-
+                            <div style="position: relative;">
+                                <img (click)="viewPhoto(0)"
+                                     [src]="enclosures[0]||'images/business/background/originalImage.png'"/>
+                                <div style="position:absolute;top:0;bottom:0;left:0;right:0;">
+                                    <div [ngStyle]="{'height': (100-(enclosureProcesses[0]||100))+'%'}"
+                                         style="background-color: rgba(0,0,0,.25);;width: 100%;height: 0%;"></div>
+                                </div>
+                            </div>
                             <ion-card-content>
                                 <h2 class="card-title">
                                     身份证正面
@@ -622,7 +626,7 @@
                                     </button>
                                 </ion-col>
                                 <ion-col text-right>
-                                    <button clear primary>
+                                    <button clear [disabled]="enclosureProcesses[0]<100" primary (click)="upload(0);">
                                         <ion-icon name='cloud-upload'></ion-icon>
                                         上传
                                     </button>
@@ -635,10 +639,14 @@
                     <ion-col width-33>
 
                         <ion-card>
-
-                            <img (click)="viewPhoto(1)"
-                                 [src]="enclosures[1]||'images/business/background/originalImage.png'"/>
-
+                            <div style="position: relative;">
+                                <img (click)="viewPhoto(1)"
+                                     [src]="enclosures[1]||'images/business/background/originalImage.png'"/>
+                                <div style="position:absolute;top:0;bottom:0;left:0;right:0;">
+                                    <div [ngStyle]="{'height': (100-(enclosureProcesses[1]||100))+'%'}"
+                                         style="background-color: rgba(0,0,0,.25);;width: 100%;height: 0%;"></div>
+                                </div>
+                            </div>
                             <ion-card-content>
                                 <h2 class="card-title">
                                     身份证反面
@@ -659,7 +667,7 @@
                                     </button>
                                 </ion-col>
                                 <ion-col text-right>
-                                    <button clear primary>
+                                    <button clear [disabled]="enclosureProcesses[1]<100" primary (click)="upload(1);">
                                         <ion-icon name='cloud-upload'></ion-icon>
                                         上传
                                     </button>
@@ -672,13 +680,17 @@
                     <ion-col width-33>
 
                         <ion-card>
-
-                            <img (click)="viewPhoto(2)"
-                                 [src]="enclosures[2]||'images/business/background/originalImage.png'"/>
-
+                            <div style="position: relative;">
+                                <img (click)="viewPhoto(2)"
+                                     [src]="enclosures[2]||'images/business/background/originalImage.png'"/>
+                                <div style="position:absolute;top:0;bottom:0;left:0;right:0;">
+                                    <div [ngStyle]="{'height': (100-(enclosureProcesses[2]||100))+'%'}"
+                                         style="background-color: rgba(0,0,0,.25);;width: 100%;height: 0%;"></div>
+                                </div>
+                            </div>
                             <ion-card-content>
                                 <h2 class="card-title">
-                                    客户本人于证件及借记卡
+                                    办理人、客户经理与借记卡合影
                                 </h2>
                             </ion-card-content>
 
@@ -696,7 +708,7 @@
                                     </button>
                                 </ion-col>
                                 <ion-col text-right>
-                                    <button clear primary>
+                                    <button clear [disabled]="enclosureProcesses[2]<100" primary (click)="upload(2);">
                                         <ion-icon name='cloud-upload'></ion-icon>
                                         上传
                                     </button>
@@ -899,11 +911,11 @@
                             <ion-card-content>
                                 <ion-row>
                                     <ion-col>
-                                        <img [hidden]="!enclosures[2]" [src]="enclosures[0]">
+                                        <img [hidden]="!enclosures[0]" [src]="enclosures[0]">
                                         <p text-center>身份证正面</p>
                                     </ion-col>
                                     <ion-col>
-                                        <img [hidden]="!enclosures[2]" [src]="enclosures[1]">
+                                        <img [hidden]="!enclosures[1]" [src]="enclosures[1]">
                                         <p text-center>身份证反面</p>
                                     </ion-col>
                                     <ion-col>
