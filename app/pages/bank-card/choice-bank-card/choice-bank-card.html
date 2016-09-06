@@ -28,9 +28,10 @@
 <ion-content class="choice-bank-card">
     <!--style="background-image: url('images/business/bg-02.jpeg');-moz-background-size: 100% 100%;-webkit-background-size: 100% 100%;background-size: 100% 100%;"-->
 
-    <img src="images/business/bg-02.jpeg" style="z-index: -1;position: absolute;width: 100%;height: 100%;-moz-filter: blur(8px);-webkit-filter: blur(8px);filter: blur(8px);">
+    <img src="images/business/bg-02.jpeg"
+         style="z-index: -1;position: absolute;width: 100%;height: 100%;-moz-filter: blur(8px);-webkit-filter: blur(8px);filter: blur(8px);">
 
-    <ion-slides pager="true">
+    <ion-slides [options]="{pager:true}">
         <ion-slide *ngFor="let cards of cardList">
 
             <ion-grid>

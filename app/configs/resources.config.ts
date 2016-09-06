@@ -3,7 +3,7 @@
  */
 export const RESTFUL_RESOURCE_END_POINT = {
     // SERVICE: "https://raw.githubusercontent.com/shenmingxuanyi/restfulapi/master/msp2",
-    SERVICE: "",
+    SERVICE: ".",
     STATIC: "https://raw.githubusercontent.com/shenmingxuanyi/restfulapi/master/msp2"
 };
 

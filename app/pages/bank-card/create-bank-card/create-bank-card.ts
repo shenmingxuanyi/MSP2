@@ -4,7 +4,7 @@ import {I18NService} from "../../../providers/i18n-service/i18n-service";
 import {IDCard} from "../../../models/business/IDCard";
 import {IDCardService} from "../../../providers/id-card-service/id-card-service";
 import {ICCardService} from "../../../providers/ic-card-service/ic-card-service";
-import {Camera} from "ionic-native";
+import {Camera, ImageResizer, ImageResizerOptions} from "ionic-native";
 import {SpacePipe} from "../../../pipes/spacePipe";
 
 /*
@@ -28,7 +28,7 @@ export class CreateBankCardPage {
 
     step: number;
 
-    enclosures: Array<string> = [null, null, null];
+    enclosures: Array<any> = [null, null, null];
     enclosureProcesses: Array<number> = [0, 0, 0];
 
     constructor(private navCtrl: NavController, public i18NService: I18NService, public idCardService: IDCardService, public loadingController: LoadingController, public alertController: AlertController, public icCardService: ICCardService, private toastController: ToastController) {
@@ -140,8 +140,31 @@ export class CreateBankCardPage {
 
     cameraPhoto(index: number) {
         Camera.getPicture({}).then((imageData) => {
-            this.enclosures[index] = imageData;
-            this.upload(index);
+            this.enclosures[index] = {originalImage: imageData};
+
+
+            let options = {
+                uri: imageData,
+                folderName: 'Protonet',
+                quality: 100,
+                width: 512,
+                height: 384
+            } as ImageResizerOptions;
+
+            ImageResizer
+                .resize(options)
+                .then(
+                    (filePath: string) => {
+
+                        alert(filePath);
+                        this.enclosures[index].smallimage = filePath;
+                        this.upload(index);
+                    },
+                    () => {
+                        console.log('Error occured');
+                    }
+                );
+
         }, (err) => {
         });
     }
@@ -201,6 +224,6 @@ export class CreateBankCardPage {
             } else {
                 clearInterval(uploadInterval);
             }
-        }, 100)
+        }, 300);
     }
 }

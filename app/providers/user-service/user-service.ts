@@ -49,8 +49,6 @@ export class UserService {
 
     signIn(user): Promise<any> {
 
-        this.events.publish(EVENTS.USER_EVENTS.USER_SECURITY.SIGN_IN, this.userInfo);
-        
         return this.http.get(RESTFUL_SERVICE_RESOURCES.SECURITY.SIGN_IN)
             .map((response)=> {
                 return response.json();

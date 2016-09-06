@@ -40,7 +40,7 @@
 
     <div [ngSwitch]="step">
 
-        <div padding *ngSwitchCase="0">
+        <div *ngSwitchCase="0" padding>
 
             <ion-grid>
                 <ion-row center>
@@ -398,6 +398,7 @@
             </ion-grid>
 
         </div>
+
         <div *ngSwitchCase="2">
 
             <ion-grid responsive-lg>
@@ -441,6 +442,7 @@
             </ion-grid>
 
         </div>
+
         <div *ngSwitchCase="3">
 
             <ion-grid responsive-lg>
@@ -591,6 +593,7 @@
             </ion-grid>
 
         </div>
+
         <div *ngSwitchCase="4">
 
             <ion-grid>
@@ -600,10 +603,12 @@
                         <ion-card>
                             <div style="position: relative;">
                                 <img (click)="viewPhoto(0)"
-                                     [src]="enclosures[0]||'images/business/background/originalImage.png'"/>
-                                <div style="position:absolute;top:0;bottom:0;left:0;right:0;">
-                                    <div [ngStyle]="{'height': (100-(enclosureProcesses[0]||100))+'%'}"
-                                         style="background-color: rgba(0,0,0,.25);;width: 100%;height: 0%;"></div>
+                                     [src]="enclosures[0]?.smallimage||'images/business/background/originalImage.png'"/>
+
+
+                                <div primary-bg [hidden]="enclosureProcesses[0]==100"
+                                     [ngStyle]="{transform: 'translateX('+(enclosureProcesses[0]-100)+'%)'}"
+                                     style="position:absolute;left:0;bottom:0;right:0;height: 3px;">
                                 </div>
                             </div>
                             <ion-card-content>
@@ -641,10 +646,10 @@
                         <ion-card>
                             <div style="position: relative;">
                                 <img (click)="viewPhoto(1)"
-                                     [src]="enclosures[1]||'images/business/background/originalImage.png'"/>
-                                <div style="position:absolute;top:0;bottom:0;left:0;right:0;">
-                                    <div [ngStyle]="{'height': (100-(enclosureProcesses[1]||100))+'%'}"
-                                         style="background-color: rgba(0,0,0,.25);;width: 100%;height: 0%;"></div>
+                                     [src]="enclosures[1]?.smallimage||'images/business/background/originalImage.png'"/>
+                                <div primary-bg [hidden]="enclosureProcesses[1]==100"
+                                     [ngStyle]="{transform: 'translateX('+(enclosureProcesses[1]-100)+'%)'}"
+                                     style="position:absolute;left:0;bottom:0;right:0;height: 3px;">
                                 </div>
                             </div>
                             <ion-card-content>
@@ -682,10 +687,10 @@
                         <ion-card>
                             <div style="position: relative;">
                                 <img (click)="viewPhoto(2)"
-                                     [src]="enclosures[2]||'images/business/background/originalImage.png'"/>
-                                <div style="position:absolute;top:0;bottom:0;left:0;right:0;">
-                                    <div [ngStyle]="{'height': (100-(enclosureProcesses[2]||100))+'%'}"
-                                         style="background-color: rgba(0,0,0,.25);;width: 100%;height: 0%;"></div>
+                                     [src]="enclosures[2]?.smallimage||'images/business/background/originalImage.png'"/>
+                                <div primary-bg [hidden]="enclosureProcesses[2]==100"
+                                     [ngStyle]="{transform: 'translateX('+(enclosureProcesses[2]-100)+'%)'}"
+                                     style="position:absolute;left:0;bottom:0;right:0;height: 3px;">
                                 </div>
                             </div>
                             <ion-card-content>
@@ -722,6 +727,7 @@
             </ion-grid>
 
         </div>
+
         <div *ngSwitchCase="5">
 
             <ion-grid responsive-lg>
@@ -911,15 +917,15 @@
                             <ion-card-content>
                                 <ion-row>
                                     <ion-col>
-                                        <img [hidden]="!enclosures[0]" [src]="enclosures[0]">
+                                        <img [hidden]="!enclosures[0]" [src]="enclosures[0]?.smallimage">
                                         <p text-center>身份证正面</p>
                                     </ion-col>
                                     <ion-col>
-                                        <img [hidden]="!enclosures[1]" [src]="enclosures[1]">
+                                        <img [hidden]="!enclosures[1]" [src]="enclosures[1]?.smallimage">
                                         <p text-center>身份证反面</p>
                                     </ion-col>
                                     <ion-col>
-                                        <img [hidden]="!enclosures[2]" [src]="enclosures[2]">
+                                        <img [hidden]="!enclosures[2]" [src]="enclosures[2]?.smallimage">
                                         <p text-center>办理人与客户经理及借记卡合影</p>
                                     </ion-col>
                                 </ion-row>

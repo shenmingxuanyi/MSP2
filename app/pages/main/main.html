@@ -24,7 +24,7 @@
 
 <ion-content class="main">
 
-    <ion-slides pager="true" style="height: 50%;">
+    <ion-slides [options]="{initialSlide: 1,loop: true ,pager:true}" style="height: 50%;">
 
         <ion-slide>
             <img style="width: 100%;height: 100%;" src="images/system/banner/3.jpg">
@@ -39,6 +39,90 @@
         </ion-slide>
 
     </ion-slides>
+
+
+    <!--
+    <ion-row stretch>
+        <ion-col>
+            <ion-card style="height: 100%;">
+                <ion-card-header>
+                    账户业务
+                </ion-card-header>
+
+                <ion-list>
+                    <button ion-item>
+                        <ion-icon name="cart" item-left></ion-icon>
+                        借记卡开卡
+                    </button>
+
+                    <button ion-item>
+                        <ion-icon name="medical" item-left></ion-icon>
+                        电子银行业务签约
+                    </button>
+
+                    <button ion-item>
+                        <ion-icon name="medical" item-left></ion-icon>
+                        借记卡审核进度查询
+                    </button>
+
+                </ion-list>
+
+            </ion-card>
+        </ion-col>
+        <ion-col>
+            <ion-card style="height: 100%;">
+                <ion-card-header>
+                    金融业务
+                </ion-card-header>
+
+                <ion-list>
+                    <button ion-item>
+                        <ion-icon name="cart" item-left></ion-icon>
+                        基金
+                    </button>
+
+                    <button ion-item>
+                        <ion-icon name="medical" item-left></ion-icon>
+                        理财
+                    </button>
+
+                    <button ion-item>
+                        <ion-icon name="medical" item-left></ion-icon>
+                        风险评估
+                    </button>
+
+                </ion-list>
+
+            </ion-card>
+        </ion-col>
+        <ion-col>
+            <ion-card style="height: 100%;">
+                <ion-card-header>
+                    金融工具
+                </ion-card-header>
+
+                <ion-list>
+                    <button ion-item>
+                        <ion-icon name="cart" item-left></ion-icon>
+                        贷款计算器
+                    </button>
+
+                    <button ion-item>
+                        <ion-icon name="medical" item-left></ion-icon>
+                        存款计算器
+                    </button>
+
+                    <button ion-item>
+                        <ion-icon name="medical" item-left></ion-icon>
+                        理财收益试算
+                    </button>
+
+                </ion-list>
+
+            </ion-card>
+        </ion-col>
+    </ion-row>
+    -->
 
     <ion-scroll style="height: 50%;" scrollY="true">
         <ion-list no-lines>
