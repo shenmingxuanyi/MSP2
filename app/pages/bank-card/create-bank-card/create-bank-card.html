@@ -649,7 +649,7 @@
                                      [src]="enclosures[1]?.smallimage||'images/business/background/originalImage.png'"/>
                                 <div primary-bg [hidden]="enclosureProcesses[1]==100"
                                      [ngStyle]="{transform: 'translateX('+(enclosureProcesses[1]-100)+'%)'}"
-                                     style="position:absolute;left:0;bottom:0;right:0;height: 3px;">
+                                     style="position:absolute;left:0;bottom:0;right:0;height: 3px;-webkit-transition: all 100ms linear;-moz-transition: all 100ms linear;-ms-transition: all 100ms linear;-o-transition: all 100ms linear;transition: all 100ms linear;">
                                 </div>
                             </div>
                             <ion-card-content>

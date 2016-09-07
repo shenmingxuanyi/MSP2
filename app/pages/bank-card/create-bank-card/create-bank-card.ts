@@ -33,7 +33,7 @@ export class CreateBankCardPage {
     enclosureProcesses: Array<number> = [0, 0, 0];
 
     constructor(private navCtrl: NavController, public i18NService: I18NService, public idCardService: IDCardService, public loadingController: LoadingController, public alertController: AlertController, public icCardService: ICCardService, private toastController: ToastController) {
-
+        this.step = 0;
     }
 
     showAlert(options: {title?: string,message?: string,subTitle?: string}) {
@@ -92,7 +92,7 @@ export class CreateBankCardPage {
     }
 
     ionViewWillEnter() {
-        this.step = 0;
+
     }
 
     lastStep() {
@@ -223,7 +223,7 @@ export class CreateBankCardPage {
             } else {
                 clearInterval(uploadInterval);
             }
-        }, 300);
+        }, 100);
     }
 
 
