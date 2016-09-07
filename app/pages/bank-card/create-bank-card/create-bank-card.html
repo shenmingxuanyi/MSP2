@@ -602,7 +602,7 @@
 
                         <ion-card>
                             <div style="position: relative;">
-                                <img (click)="viewPhoto(0)"
+                                <img (click)="viewPhoto(0)" (click)="showOriginalImage(enclosures[0]?.originalImage)"
                                      [src]="enclosures[0]?.smallimage||'images/business/background/originalImage.png'"/>
 
 
@@ -645,7 +645,7 @@
 
                         <ion-card>
                             <div style="position: relative;">
-                                <img (click)="viewPhoto(1)"
+                                <img (click)="viewPhoto(1)" (click)="showOriginalImage(enclosures[1]?.originalImage)"
                                      [src]="enclosures[1]?.smallimage||'images/business/background/originalImage.png'"/>
                                 <div primary-bg [hidden]="enclosureProcesses[1]==100"
                                      [ngStyle]="{transform: 'translateX('+(enclosureProcesses[1]-100)+'%)'}"
@@ -686,7 +686,7 @@
 
                         <ion-card>
                             <div style="position: relative;">
-                                <img (click)="viewPhoto(2)"
+                                <img (click)="viewPhoto(2)" (click)="showOriginalImage(enclosures[2]?.originalImage)"
                                      [src]="enclosures[2]?.smallimage||'images/business/background/originalImage.png'"/>
                                 <div primary-bg [hidden]="enclosureProcesses[2]==100"
                                      [ngStyle]="{transform: 'translateX('+(enclosureProcesses[2]-100)+'%)'}"
@@ -917,15 +917,18 @@
                             <ion-card-content>
                                 <ion-row>
                                     <ion-col>
-                                        <img [hidden]="!enclosures[0]" [src]="enclosures[0]?.smallimage">
+                                        <img (click)="showOriginalImage(enclosures[0]?.originalImage)"
+                                             [hidden]="!enclosures[0]" [src]="enclosures[0]?.smallimage">
                                         <p text-center>身份证正面</p>
                                     </ion-col>
                                     <ion-col>
-                                        <img [hidden]="!enclosures[1]" [src]="enclosures[1]?.smallimage">
+                                        <img (click)="showOriginalImage(enclosures[1]?.originalImage)"
+                                             [hidden]="!enclosures[1]" [src]="enclosures[1]?.smallimage">
                                         <p text-center>身份证反面</p>
                                     </ion-col>
                                     <ion-col>
-                                        <img [hidden]="!enclosures[2]" [src]="enclosures[2]?.smallimage">
+                                        <img (click)="showOriginalImage(enclosures[2]?.originalImage)"
+                                             [hidden]="!enclosures[2]" [src]="enclosures[2]?.smallimage">
                                         <p text-center>办理人与客户经理及借记卡合影</p>
                                     </ion-col>
                                 </ion-row>

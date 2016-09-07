@@ -6,6 +6,7 @@ import {IDCardService} from "../../../providers/id-card-service/id-card-service"
 import {ICCardService} from "../../../providers/ic-card-service/ic-card-service";
 import {Camera, ImageResizer, ImageResizerOptions} from "ionic-native";
 import {SpacePipe} from "../../../pipes/spacePipe";
+import {ShowImagePage} from "../../commons/show-image/show-image";
 
 /*
  Generated class for the CreateBankCardPage page.
@@ -146,7 +147,7 @@ export class CreateBankCardPage {
             let options = {
                 uri: imageData,
                 folderName: 'Protonet',
-                quality: 100,
+                quality: 90,
                 width: 512,
                 height: 384
             } as ImageResizerOptions;
@@ -155,8 +156,6 @@ export class CreateBankCardPage {
                 .resize(options)
                 .then(
                     (filePath: string) => {
-
-                        alert(filePath);
                         this.enclosures[index].smallimage = filePath;
                         this.upload(index);
                     },
@@ -225,5 +224,12 @@ export class CreateBankCardPage {
                 clearInterval(uploadInterval);
             }
         }, 300);
+    }
+
+
+    showOriginalImage(imageUrl) {
+        if (imageUrl) {
+            this.navCtrl.push(ShowImagePage, {imageUrl: imageUrl});
+        }
     }
 }
