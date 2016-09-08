@@ -1,0 +1,153 @@
+.nfc-read-modal {
+
+  .nfc-reader-modal-spinner-container {
+    position: relative;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-animation: nfc-spinner-container-scale-keyframes 5s ease-in-out infinite;
+    -o-animation: nfc-spinner-container-scale-keyframes 5s ease-in-out infinite;
+    animation: nfc-spinner-container-scale-keyframes 5s ease-in-out infinite;
+
+    &::after, &::before {
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+
+      z-index: -1;
+
+      content: " ";
+
+      //background: rgba(0, 0, 0, .15);
+
+      border: 25px solid rgba(0, 0, 0, .20);
+
+      opacity: 0;
+      -webkit-opacity: 0;
+
+      -webkit-animation: nfc-spinner-box-keyframes 1.5s ease-in 0s infinite;
+      -o-animation: nfc-spinner-box-keyframes 1.5s ease-in 0s infinite;
+      animation: nfc-spinner-box-keyframes 1.5s ease-in 0s infinite;
+
+    }
+
+    &::before {
+      -webkit-animation-delay: 0s;
+      -o-animation-delay: 0s;
+      animation-delay: 0s;
+
+    }
+    &::after {
+      -webkit-animation-delay: 1s;
+      -o-animation-delay: 1s;
+      animation-delay: 1s;
+    }
+
+  }
+
+  .nfc-reader-modal-card-container {
+
+    -webkit-animation: nfc-reader-modal-card-keyframe 1.5s ease-in-out infinite alternate;
+    -o-animation: nfc-reader-modal-card-keyframe 1.5s ease-in-out infinite alternate;
+    animation: nfc-reader-modal-card-keyframe 1.5s ease-in-out infinite alternate;
+
+  }
+
+  @-webkit-keyframes nfc-spinner-container-scale-keyframes {
+
+    0% {
+      -webkit-transform: scale(.8, .8);
+    }
+
+    50% {
+      -webkit-transform: scale(1, 1);
+    }
+
+    100% {
+      -webkit-transform: scale(.8, .8);
+    }
+
+  }
+
+  @keyframes nfc-spinner-container-scale-keyframes {
+
+    0% {
+      transform: scale(.8, .8);
+    }
+
+    50% {
+      transform: scale(1, 1);
+    }
+
+    100% {
+      transform: scale(.8, .8);
+    }
+
+  }
+
+  @-webkit-keyframes nfc-spinner-box-keyframes {
+
+    0% {
+      -webkit-transform: scale(0, 0);
+      opacity: 1;
+      border-style: double;
+    }
+
+    100% {
+      -webkit-transform: scale(3, 3);
+      -webkit-opacity: 0;
+      border-style: solid;
+    }
+
+  }
+
+  @keyframes nfc-spinner-box-keyframes {
+
+    0% {
+      transform: scale(0, 0);
+      opacity: 1;
+      border-style: double;
+    }
+
+    100% {
+      transform: scale(3, 3);
+      opacity: 0;
+      border-style: solid;
+    }
+
+  }
+
+  @-webkit-keyframes nfc-reader-modal-card-keyframe {
+
+    0% {
+      -webkit-transform: translateX(-25%);
+    }
+
+    100% {
+      -webkit-transform: translateX(25%);
+    }
+
+  }
+
+  @keyframes nfc-reader-modal-card-keyframe {
+    0% {
+      transform: translateX(-25%);
+    }
+
+    100% {
+      transform: translateX(25%);
+    }
+
+  }
+
+}

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, LoadingController, AlertController, ToastController} from 'ionic-angular';
+import {NavController, LoadingController, AlertController, ToastController, ModalController} from 'ionic-angular';
 import {I18NService} from "../../../providers/i18n-service/i18n-service";
 import {IDCard} from "../../../models/business/IDCard";
 import {IDCardService} from "../../../providers/id-card-service/id-card-service";
@@ -7,6 +7,8 @@ import {ICCardService} from "../../../providers/ic-card-service/ic-card-service"
 import {Camera, ImageResizer, ImageResizerOptions} from "ionic-native";
 import {SpacePipe} from "../../../pipes/spacePipe";
 import {ShowImagePage} from "../../commons/show-image/show-image";
+import {NfcReadModalPage} from "../../commons/nfc-read-modal/nfc-read-modal";
+import {ZSSignaturePad} from "../../../cordova-plugin/signature-pad/signaturePad";
 
 /*
  Generated class for the CreateBankCardPage page.
@@ -21,6 +23,8 @@ import {ShowImagePage} from "../../commons/show-image/show-image";
 })
 export class CreateBankCardPage {
 
+    signatureImage: string;
+
     originalIDCard: IDCard;
 
     verificationIDCard: IDCard;
@@ -32,7 +36,7 @@ export class CreateBankCardPage {
     enclosures: Array<any> = [null, null, null];
     enclosureProcesses: Array<number> = [0, 0, 0];
 
-    constructor(private navCtrl: NavController, public i18NService: I18NService, public idCardService: IDCardService, public loadingController: LoadingController, public alertController: AlertController, public icCardService: ICCardService, private toastController: ToastController) {
+    constructor(private navCtrl: NavController, public modalCtrl: ModalController, public i18NService: I18NService, public idCardService: IDCardService, public loadingController: LoadingController, public alertController: AlertController, public icCardService: ICCardService, private toastController: ToastController) {
         this.step = 0;
     }
 
@@ -51,16 +55,21 @@ export class CreateBankCardPage {
         this.originalIDCard = null;
         this.verificationIDCard = null;
 
-        let loader = this.loadingController.create({
-            content: "正在读取身份证..."
+
+        let profileModal = this.modalCtrl.create(NfcReadModalPage, {type: "idcard"});
+
+        profileModal.present();
+        profileModal.onDidDismiss(()=> {
+
         });
-        loader.present();
-        this.idCardService.read(1500).then(idCardInfo=> {
+
+        this.idCardService.read(10000).then(idCardInfo=> {
             this.originalIDCard = idCardInfo;
-            loader.dismiss().then(()=> {
+            profileModal.dismiss().then(()=> {
                 this.validateIDCard();
             });
         });
+
     }
 
     validateIDCard() {
@@ -77,17 +86,20 @@ export class CreateBankCardPage {
     readICCard() {
         this.icCardNumber = null;
 
-        let loader = this.loadingController.create({
-            content: "正在读取银行卡..."
+        let profileModal = this.modalCtrl.create(NfcReadModalPage, {type: "iccard"});
+
+        profileModal.present();
+        profileModal.onDidDismiss(()=> {
+
         });
 
-        loader.present();
-
         this.icCardService
-            .read()
+            .read(5000)
             .then((number)=> {
                 this.icCardNumber = number;
-                loader.dismiss();
+                profileModal.dismiss().then(()=> {
+
+                });
             });
     }
 
@@ -231,5 +243,12 @@ export class CreateBankCardPage {
         if (imageUrl) {
             this.navCtrl.push(ShowImagePage, {imageUrl: imageUrl});
         }
+    }
+
+
+    signature() {
+        ZSSignaturePad.openSignaturePad().then((res)=> {
+            this.signatureImage = res.imageUrl;
+        });
     }
 }

@@ -38,7 +38,7 @@
 
 <ion-content class="create-bank-card">
 
-    <div [ngSwitch]="step">
+    <div [ngSwitch]="step" style="padding-bottom: 40px;">
 
         <div *ngSwitchCase="0" padding>
 
@@ -267,7 +267,7 @@
                     <ion-col width-80 offset-10>
                         <ion-card>
 
-                            <ion-card-header style="background-color: #fafafa;">
+                            <ion-card-header style="background-color: #fafafa;border-left: 3px solid #00B7FF;">
                                 <h2>信息录入</h2>
                             </ion-card-header>
 
@@ -416,7 +416,7 @@
                 <ion-row>
                     <ion-col width-80 offset-10>
                         <ion-card>
-                            <ion-card-header style="background-color: #fafafa;">
+                            <ion-card-header style="background-color: #fafafa;border-left: 3px solid #00B7FF;">
                                 <h2>设置密码</h2>
                             </ion-card-header>
                             <ion-card-content>
@@ -450,7 +450,7 @@
                     <ion-col width-80 offset-10>
 
                         <ion-card>
-                            <ion-card-header>
+                            <ion-card-header style="border-left: 3px solid #00B7FF;">
                                 <ion-item>
                                     <ion-label>开通银信通</ion-label>
                                     <ion-toggle [(ngModel)]="yxt" checked="false"></ion-toggle>
@@ -468,7 +468,7 @@
                         </ion-card>
 
                         <ion-card>
-                            <ion-card-header>
+                            <ion-card-header style="border-left: 3px solid #00B7FF;">
                                 <ion-item>
                                     <ion-label>开通支付宝</ion-label>
                                     <ion-toggle [(ngModel)]="zfb" checked="false"></ion-toggle>
@@ -506,7 +506,7 @@
                         </ion-card>
 
                         <ion-card>
-                            <ion-card-header>
+                            <ion-card-header style="border-left: 3px solid #00B7FF;">
                                 <ion-item>
                                     <ion-label>开通网上银行</ion-label>
                                     <ion-toggle [(ngModel)]="wsyh" checked="false"></ion-toggle>
@@ -547,7 +547,7 @@
                         </ion-card>
 
                         <ion-card>
-                            <ion-card-header>
+                            <ion-card-header style="border-left: 3px solid #00B7FF;">
                                 <ion-item>
                                     <ion-label>开通银行支付</ion-label>
                                     <ion-toggle [(ngModel)]="yhzf" checked="false"></ion-toggle>
@@ -569,7 +569,7 @@
                         </ion-card>
 
                         <ion-card>
-                            <ion-card-header>
+                            <ion-card-header style="border-left: 3px solid #00B7FF;">
                                 <ion-item>
                                     <ion-label>开通电话银行</ion-label>
                                     <ion-toggle [(ngModel)]="dhyh" checked="false"></ion-toggle>
@@ -1118,8 +1118,9 @@
             </ion-grid>
 
             <ion-grid responsive-lg>
-                <ion-row>
-                    <ion-col width-80 offset-10>
+                <ion-row stretch>
+                    <ion-col width-10></ion-col>
+                    <ion-col width-50>
                         <ion-card>
                             <ion-card-header>
                                 <ion-item>
@@ -1131,9 +1132,15 @@
                             </ion-card-header>
                         </ion-card>
                     </ion-col>
+                    <ion-col>
+                        <ion-card tappable (click)="signature()" text-center>
+                            <img [hidden]="!signatureImage" [src]="signatureImage">
+                            <h1 style="padding: 20px 0;color: #999;" [hidden]="signatureImage">签名</h1>
+                        </ion-card>
+                    </ion-col>
+                    <ion-col width-10></ion-col>
                 </ion-row>
             </ion-grid>
-
         </div>
 
     </div>

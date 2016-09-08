@@ -1,0 +1,53 @@
+<!--
+  Generated template for the NfcReadModalPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>读取{{type=='idcard'?'身份证':'银行卡'}}</ion-title>
+        <ion-buttons right>
+
+            <button dark clear navPop>
+                <ion-icon name="close"></ion-icon>
+            </button>
+
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color: #fafafa" padding class="nfc-read-modal" scroll="false">
+
+
+    <ion-row>
+        <ion-col width-33 offset-33>
+            <div class="nfc-reader-modal-spinner-container">
+                <img style="width: 100%" src="images/business/nfc-circle.png">
+            </div>
+        </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+        <ion-col width-33 offset-33>
+            <div class="nfc-reader-modal-card-container">
+                <img style="width: 100%"
+                     [src]="type=='idcard'?'images/business/nfc-idcard.png':'images/business/nfc-iccard.png'">
+            </div>
+        </ion-col>
+    </ion-row>
+
+    <h4 text-center>
+        请使用NFC读取{{type=='idcard'?'身份证':'银行卡'}} <span style="color: orange">{{times}}秒</span>
+    </h4>
+
+    <h5 text-center>
+
+    </h5>
+
+</ion-content>

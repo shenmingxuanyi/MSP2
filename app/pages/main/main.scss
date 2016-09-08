@@ -1,5 +1,9 @@
 .main {
 
+  background: #fefefe;
+  background: url('../../images/business/page-bg.jpg');
+  background-attachment: fixed;
+
   .button-transparent:not(.activated) {
     background-color: transparent;
   }
