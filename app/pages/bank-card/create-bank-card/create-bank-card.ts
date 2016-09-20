@@ -9,6 +9,7 @@ import {SpacePipe} from "../../../pipes/spacePipe";
 import {ShowImagePage} from "../../commons/show-image/show-image";
 import {NfcReadModalPage} from "../../commons/nfc-read-modal/nfc-read-modal";
 import {ZSSignaturePad} from "../../../cordova-plugin/signature-pad/signaturePad";
+import {NFCCardReader} from "../../../cordova-plugin/card-reader/nfc-card-reader";
 
 /*
  Generated class for the CreateBankCardPage page.
@@ -16,6 +17,10 @@ import {ZSSignaturePad} from "../../../cordova-plugin/signature-pad/signaturePad
  See http://ionicframework.com/docs/v2/components/#navigation for more info on
  Ionic pages and navigation.
  */
+
+
+declare var cordova: any;
+
 @Component({
     templateUrl: 'build/pages/bank-card/create-bank-card/create-bank-card.html',
     providers: [IDCardService, ICCardService],
@@ -52,6 +57,7 @@ export class CreateBankCardPage {
 
     readIDCard() {
 
+
         this.originalIDCard = null;
         this.verificationIDCard = null;
 
@@ -60,15 +66,20 @@ export class CreateBankCardPage {
 
         profileModal.present();
         profileModal.onDidDismiss(()=> {
-
+            NFCCardReader.closeReaderListener();
         });
 
-        this.idCardService.read(10000).then(idCardInfo=> {
-            this.originalIDCard = idCardInfo;
-            profileModal.dismiss().then(()=> {
-                this.validateIDCard();
+
+        NFCCardReader.readerIDCard()
+            .then((idCardInfo)=> {
+                this.originalIDCard = idCardInfo;
+                profileModal.dismiss().then(()=> {
+                    this.validateIDCard();
+                });
+            })
+            .catch((err)=> {
+                profileModal.dismiss();
             });
-        });
 
     }
 
@@ -77,10 +88,12 @@ export class CreateBankCardPage {
             content: "正在验证身份证..."
         });
         loader.present();
-        this.idCardService.read(3000).then(idCardInfo=> {
-            this.verificationIDCard = idCardInfo;
+
+        setTimeout(()=> {
+            this.verificationIDCard = this.originalIDCard;
             loader.dismiss();
-        });
+        }, 3000);
+
     }
 
     readICCard() {
@@ -90,17 +103,19 @@ export class CreateBankCardPage {
 
         profileModal.present();
         profileModal.onDidDismiss(()=> {
-
+            NFCCardReader.closeReaderListener();
         });
 
-        this.icCardService
-            .read(5000)
-            .then((number)=> {
-                this.icCardNumber = number;
-                profileModal.dismiss().then(()=> {
 
-                });
+        NFCCardReader.readerICCard()
+            .then((icCardInfo)=> {
+                profileModal.dismiss();
+                this.icCardNumber = icCardInfo.icCardNum;
+            })
+            .catch((err)=> {
+                profileModal.dismiss();
             });
+
     }
 
     ionViewWillEnter() {

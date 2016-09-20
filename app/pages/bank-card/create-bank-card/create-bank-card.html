@@ -1120,7 +1120,7 @@
             <ion-grid responsive-lg>
                 <ion-row stretch>
                     <ion-col width-10></ion-col>
-                    <ion-col width-50>
+                    <ion-col width-80>
                         <ion-card>
                             <ion-card-header>
                                 <ion-item>
@@ -1132,7 +1132,33 @@
                             </ion-card-header>
                         </ion-card>
                     </ion-col>
-                    <ion-col>
+                    <ion-col width-10></ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-grid responsive-lg>
+                <ion-row stretch>
+                    <ion-col width-10></ion-col>
+                    <ion-col width-80>
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-item>
+                                    <ion-label>
+                                        本人承诺上述填写的个人资料信息真实、有效，已阅读并同意遵守《南充市商业银行股份有限公司个人账户开户及综合服务协议书》中的相关内容，同意开通上述所选业务，并接受相关业务章程和协议的约束，如有虚假，自愿承担法律责任。本人同意贵行收集、处理、应用及保留本人个人资料。
+                                    </ion-label>
+                                    <ion-toggle item-left checked="false"></ion-toggle>
+                                </ion-item>
+                            </ion-card-header>
+                        </ion-card>
+                    </ion-col>
+                    <ion-col width-10></ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-grid responsive-lg>
+                <ion-row stretch>
+                    <ion-col width-10></ion-col>
+                    <ion-col width-33>
                         <ion-card tappable (click)="signature()" text-center>
                             <img [hidden]="!signatureImage" [src]="signatureImage">
                             <h1 style="padding: 20px 0;color: #999;" [hidden]="signatureImage">签名</h1>
@@ -1141,6 +1167,8 @@
                     <ion-col width-10></ion-col>
                 </ion-row>
             </ion-grid>
+
+
         </div>
 
     </div>
