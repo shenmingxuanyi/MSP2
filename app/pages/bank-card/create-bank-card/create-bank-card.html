@@ -1122,33 +1122,14 @@
                     <ion-col width-10></ion-col>
                     <ion-col width-80>
                         <ion-card>
-                            <ion-card-header>
+                            <ion-card-content>
                                 <ion-item>
-                                    <ion-label>
-                                        本人承诺上述填写的个人资料信息真实、有效，已阅读并同意遵守《南充市商业银行股份有限公司个人账户开户及综合服务协议书》中的相关内容，同意开通上述所选业务，并接受相关业务章程和协议的约束，如有虚假，自愿承担法律责任。本人同意贵行收集、处理、应用及保留本人个人资料。
-                                    </ion-label>
+                                    <div item-content>
+                                        本人承诺上述填写的个人资料信息真实、有效，已阅读并同意遵守 <span style="font-weight: bold" primary>《南充市商业银行股份有限公司个人账户开户及综合服务协议书》</span>中的相关内容，同意开通上述所选业务，并接受相关业务章程和协议的约束，如有虚假，自愿承担法律责任。本人同意贵行收集、处理、应用及保留本人个人资料。
+                                    </div>
                                     <ion-toggle item-left checked="false"></ion-toggle>
                                 </ion-item>
-                            </ion-card-header>
-                        </ion-card>
-                    </ion-col>
-                    <ion-col width-10></ion-col>
-                </ion-row>
-            </ion-grid>
-
-            <ion-grid responsive-lg>
-                <ion-row stretch>
-                    <ion-col width-10></ion-col>
-                    <ion-col width-80>
-                        <ion-card>
-                            <ion-card-header>
-                                <ion-item>
-                                    <ion-label>
-                                        本人承诺上述填写的个人资料信息真实、有效，已阅读并同意遵守《南充市商业银行股份有限公司个人账户开户及综合服务协议书》中的相关内容，同意开通上述所选业务，并接受相关业务章程和协议的约束，如有虚假，自愿承担法律责任。本人同意贵行收集、处理、应用及保留本人个人资料。
-                                    </ion-label>
-                                    <ion-toggle item-left checked="false"></ion-toggle>
-                                </ion-item>
-                            </ion-card-header>
+                            </ion-card-content>
                         </ion-card>
                     </ion-col>
                     <ion-col width-10></ion-col>
@@ -1172,6 +1153,8 @@
         </div>
 
     </div>
+
+
 
 
     <button [disabled]="step<1" large fab fab-bottom fab-left fab-fixed (click)="lastStep()">
